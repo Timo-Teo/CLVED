@@ -3,4 +3,5 @@
  Desarrolladores:
  - Camuendo Timoteo
  - Llano Jenny
- - Vásquez Anhaí
+ - Vásquez Anahí ( Mi nombre estaba mal -_-)
+
