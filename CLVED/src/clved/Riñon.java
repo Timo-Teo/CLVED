@@ -9,6 +9,6 @@ package clved;
  *
  * @author nicol
  */
-public class Organo {
+public class Riñon {
     
 }

@@ -59,8 +59,8 @@ public class GUI_Donador extends javax.swing.JFrame {
         cmbGrado1 = new javax.swing.JComboBox<>();
         cmbGrado2 = new javax.swing.JComboBox<>();
         txtEdad = new javax.swing.JTextField();
-        txtNombres = new javax.swing.JTextField();
-        txtApellidos = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -277,10 +277,10 @@ public class GUI_Donador extends javax.swing.JFrame {
         cmbGrado2.setBounds(560, 270, 130, 30);
         pnlFondo.add(txtEdad);
         txtEdad.setBounds(160, 350, 80, 30);
-        pnlFondo.add(txtNombres);
-        txtNombres.setBounds(160, 270, 160, 30);
-        pnlFondo.add(txtApellidos);
-        txtApellidos.setBounds(160, 310, 160, 30);
+        pnlFondo.add(txtNombre);
+        txtNombre.setBounds(160, 270, 160, 30);
+        pnlFondo.add(txtApellido);
+        txtApellido.setBounds(160, 310, 160, 30);
 
         getContentPane().add(pnlFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
@@ -417,8 +417,8 @@ public class GUI_Donador extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnNinguno;
     private javax.swing.JRadioButton rbtnPresionArterial;
     private javax.swing.JRadioButton rbtnVih;
-    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtEdad;
-    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

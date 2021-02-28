@@ -45,8 +45,8 @@ public class GUI_Receptor extends javax.swing.JFrame {
         btnContinuar = new javax.swing.JButton();
         cmbTipoSangre = new javax.swing.JComboBox<>();
         cmbSexo = new javax.swing.JComboBox<>();
-        txtNombres = new javax.swing.JTextField();
-        txtApellidos = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
         pnlEnfermedades = new javax.swing.JPanel();
         rbtnPresionArterial = new javax.swing.JRadioButton();
@@ -151,10 +151,16 @@ public class GUI_Receptor extends javax.swing.JFrame {
         });
         pnlFondo.add(cmbSexo);
         cmbSexo.setBounds(160, 230, 140, 30);
-        pnlFondo.add(txtNombres);
-        txtNombres.setBounds(160, 270, 160, 30);
-        pnlFondo.add(txtApellidos);
-        txtApellidos.setBounds(160, 310, 160, 30);
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+        pnlFondo.add(txtNombre);
+        txtNombre.setBounds(160, 270, 160, 30);
+        pnlFondo.add(txtApellido);
+        txtApellido.setBounds(160, 310, 160, 30);
         pnlFondo.add(txtEdad);
         txtEdad.setBounds(160, 350, 80, 30);
 
@@ -230,7 +236,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
                         .addComponent(rbtnHepatitis)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbtnVih)
-                        .addGap(0, 5, Short.MAX_VALUE)))
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -251,9 +257,58 @@ public class GUI_Receptor extends javax.swing.JFrame {
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         // TODO add your handling code here:
+        
+        //Ingresamos Informacion
+        
+        Receptor receptor;
+        
+        String nombre;
+        String apellido;
+        int edad;
+        String enfermedades = "";
+        String tipoSangre;
+        String sexo;
+        
+        nombre = txtNombre.getText();
+        apellido = txtApellido.getText();
+        edad = Integer.parseInt(txtEdad.getText());
+        
+        tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+        sexo = (String) cmbSexo.getSelectedItem();
+        
+        if(rbtnPresionArterial.isSelected()){
+            enfermedades += rbtnPresionArterial.getText();
+        }else if (rbtnEnfermedadCardiaca.isSelected()){
+            enfermedades += rbtnEnfermedadCardiaca + " ";
+        }else if (rbtnEnfermedadRenal.isSelected()){
+            enfermedades += rbtnEnfermedadRenal.getText() + " ";
+        }else if (rbtnHepatitis.isSelected()){
+            enfermedades += rbtnHepatitis.getText() + " ";
+        }else if (rbtnVih.isSelected()){
+            enfermedades += rbtnVih.getText() + " ";
+        }else if (rbtnDiabetes.isSelected()){
+            enfermedades += rbtnDiabetes.getText();
+        }else{
+            if(rbtnNinguno.isSelected()){
+                enfermedades = "";
+                rbtnDiabetes.setSelected(false);
+                rbtnEnfermedadCardiaca.setSelected(false);
+                rbtnEnfermedadRenal.setSelected(false);
+                rbtnPresionArterial.setSelected(false);
+                rbtnVih.setSelected(false);
+            }
+        }
+        
+        receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
+        
+        
+        
+        
+        
         GUI_Donador donador = new GUI_Donador();
         donador.setVisible(true);
         dispose();
+  
     }//GEN-LAST:event_btnContinuarActionPerformed
 
     private void cmbTipoSangreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoSangreActionPerformed
@@ -300,6 +355,10 @@ public class GUI_Receptor extends javax.swing.JFrame {
     private void rbtnEnfermedadCardiacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnEnfermedadCardiacaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnEnfermedadCardiacaActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,8 +419,8 @@ public class GUI_Receptor extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnNinguno;
     private javax.swing.JRadioButton rbtnPresionArterial;
     private javax.swing.JRadioButton rbtnVih;
-    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtEdad;
-    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
