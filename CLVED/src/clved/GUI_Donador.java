@@ -304,16 +304,14 @@ public class GUI_Donador extends javax.swing.JFrame {
     private void btnAgregarDonadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarDonadorActionPerformed
         // TODO add your handling code here:
         
-        
-        
-
         nombre = txtNombre.getText();
         apellido = txtApellido.getText();
         edad = Integer.parseInt(txtEdad.getText());
 
         tipoSangre = (String) cmbTipoSangre.getSelectedItem();
-        sexo = (String) cmbSexo.getSelectedItem();
+        GUI_Receptor.miMatriz.insertar(tipoSangre);
         
+        sexo = (String) cmbSexo.getSelectedItem();
         
         parentezco = (String) cmbGrado1.getSelectedItem();
         parentezco = (String) cmbGrado2.getSelectedItem();
@@ -346,7 +344,6 @@ public class GUI_Donador extends javax.swing.JFrame {
             rbtnVih.setSelected(false);
         }
         
-
         donador = new Donante(nombre, apellido, edad, sexo, tipoSangre, enfermedades, parentezco);
 
         listaDonadores.insertarNodo(donador);

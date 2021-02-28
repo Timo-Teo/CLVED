@@ -17,6 +17,7 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
     public GUI_TipoSangre() {
         initComponents();
         setLocationRelativeTo(null);
+        txaTipoSangre.setText(GUI_Receptor.miMatriz.imprimiMatriz());
     }
 
     /**
@@ -35,6 +36,8 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         lblClved = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaTipoSangre = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,6 +78,13 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
         });
         pnlFondo.add(btnSalir);
         btnSalir.setBounds(730, 390, 120, 30);
+
+        txaTipoSangre.setColumns(20);
+        txaTipoSangre.setRows(5);
+        jScrollPane1.setViewportView(txaTipoSangre);
+
+        pnlFondo.add(jScrollPane1);
+        jScrollPane1.setBounds(40, 90, 780, 240);
 
         getContentPane().add(pnlFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 440));
 
@@ -126,10 +136,12 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClved;
     private javax.swing.JLabel lblRinon;
     private javax.swing.JLabel lblRinon1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlFondo;
+    private javax.swing.JTextArea txaTipoSangre;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 public class GUI_Receptor extends javax.swing.JFrame {
 
     static String datosReceptor;
+    static MatrizTipoSangre miMatriz = new MatrizTipoSangre();
 
     /**
      * Creates new form GUI_Receptor
@@ -275,6 +276,8 @@ public class GUI_Receptor extends javax.swing.JFrame {
         edad = Integer.parseInt(txtEdad.getText());
 
         tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+        miMatriz.setTipoSangreReceptor(tipoSangre);
+        
         sexo = (String) cmbSexo.getSelectedItem();
 
         if (rbtnPresionArterial.isSelected()) {

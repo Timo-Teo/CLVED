@@ -15,7 +15,7 @@ public class MatrizTipoSangre {
     private String tipoSangreReceptor;
     String tipoSangreDonador;
     
-    public MatrizTipoSangre(String tipoSangre){
+    public MatrizTipoSangre(){
        matrizTipoSangre[0][0] = " X ";
        matrizTipoSangre[0][1] = "O-";
        matrizTipoSangre[1][0] = "O-";
@@ -39,8 +39,6 @@ public class MatrizTipoSangre {
                matrizTipoSangre [i][j] = "No";
            }
        }
-       
-       this.tipoSangreReceptor = tipoSangre;
 
     }
 
@@ -72,18 +70,20 @@ public class MatrizTipoSangre {
         
     }
     
-    public void imprimiMatriz() {
+    public String imprimiMatriz() {
+        String salida = "";
         
         for (int i = 0; i < matrizTipoSangre.length; i++) {
-            System.out.print("\t|");
+            salida +="\t|";
             for (int j = 0; j < matrizTipoSangre[i].length; j++) {
-                System.out.print(matrizTipoSangre[i][j]);
+                salida += matrizTipoSangre[i][j] ;
                 if (j != matrizTipoSangre[i].length - 1) {
-                    System.out.print("\t");
+                    salida+="\t";
                 }
             }
-            System.out.println("|");
+            salida+="|\n";
         }
+        return salida;
     }
 
     
