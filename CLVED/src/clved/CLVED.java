@@ -17,6 +17,14 @@ public class CLVED {
     public static void main(String[] args) {
         // TODO code application logic here
         //Test
+        
+        Donante donador = new Donante("TImo","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
+        
+        Lista lista = new Lista();
+        
+        lista.insertarNodo(donador);
+                
+        
     }
     
 }

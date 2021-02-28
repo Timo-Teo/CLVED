@@ -17,6 +17,7 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
     public GUI_NoCompatible() {
         initComponents();
         setLocationRelativeTo(null);
+        txaNoCompatibles.setText(GUI_Donador.informacionLista);
     }
 
     /**
@@ -34,6 +35,8 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
         lblRinon1 = new javax.swing.JLabel();
         lblClved = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaNoCompatibles = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,6 +72,14 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
         });
         pnlFondo.add(btnSalir);
         btnSalir.setBounds(730, 390, 120, 30);
+
+        txaNoCompatibles.setColumns(20);
+        txaNoCompatibles.setFont(new java.awt.Font("MS PGothic", 0, 24)); // NOI18N
+        txaNoCompatibles.setRows(5);
+        jScrollPane1.setViewportView(txaNoCompatibles);
+
+        pnlFondo.add(jScrollPane1);
+        jScrollPane1.setBounds(100, 80, 620, 280);
 
         getContentPane().add(pnlFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 440));
 
@@ -119,10 +130,12 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClved;
     private javax.swing.JLabel lblRinon1;
     private javax.swing.JLabel lblRinon2;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlFondo;
+    private javax.swing.JTextArea txaNoCompatibles;
     // End of variables declaration//GEN-END:variables
 }

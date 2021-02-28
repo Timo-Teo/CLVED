@@ -13,12 +13,26 @@ import javax.swing.ImageIcon;
  */
 public class GUI_Donador extends javax.swing.JFrame {
 
+    Lista listaDonadores = new Lista();
+    Donante donador;
+
+        String nombre;
+        String apellido;
+        int edad;
+        String enfermedades = "";
+        String tipoSangre;
+        String sexo;
+        String parentezco;
+        
+    static String informacionLista = "";
+    
     /**
      * Creates new form GUI_Donador
      */
     public GUI_Donador() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -90,7 +104,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnAgregarDonador);
-        btnAgregarDonador.setBounds(420, 520, 220, 30);
+        btnAgregarDonador.setBounds(420, 500, 220, 30);
 
         lblNombres.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblNombres.setText("Nombres");
@@ -217,14 +231,14 @@ public class GUI_Donador extends javax.swing.JFrame {
         btnContinuar.setBounds(680, 520, 150, 30);
 
         cmbGrado3.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbGrado3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3er Grado" }));
+        cmbGrado3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3er Grado", "Bisabuelo/a", "Tio/a", "Sobrino/a", "Bisnieto/a" }));
         cmbGrado3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGrado3ActionPerformed(evt);
             }
         });
         pnlFondo.add(cmbGrado3);
-        cmbGrado3.setBounds(704, 270, 126, 30);
+        cmbGrado3.setBounds(704, 270, 142, 30);
 
         cmbSexo.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Femenino", "Masculino" }));
@@ -257,7 +271,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         cmbTipoSangre.setBounds(680, 190, 150, 30);
 
         cmbGrado1.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbGrado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1er Grado", " " }));
+        cmbGrado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1er Grado", "Conyugue", "Padre", "Madre", "Suegro/a", "Hijo/a", "Yerno", "Nuera", " ", " " }));
         cmbGrado1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGrado1ActionPerformed(evt);
@@ -267,7 +281,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         cmbGrado1.setBounds(420, 270, 130, 30);
 
         cmbGrado2.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbGrado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2do Grado" }));
+        cmbGrado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2do Grado", "Abuelo/a", "Hermano/a", "Cuñado/a", "Nieto/a" }));
         cmbGrado2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGrado2ActionPerformed(evt);
@@ -289,6 +303,59 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     private void btnAgregarDonadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarDonadorActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+
+        nombre = txtNombre.getText();
+        apellido = txtApellido.getText();
+        edad = Integer.parseInt(txtEdad.getText());
+
+        tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+        sexo = (String) cmbSexo.getSelectedItem();
+        
+        
+        parentezco = (String) cmbGrado1.getSelectedItem();
+        parentezco = (String) cmbGrado2.getSelectedItem();
+        parentezco = (String) cmbGrado3.getSelectedItem();
+        
+        if (rbtnPresionArterial.isSelected()) {
+            enfermedades += rbtnPresionArterial.getText();
+        }
+        if (rbtnEnfermedadCardiaca.isSelected()) {
+            enfermedades += rbtnEnfermedadCardiaca.getText() + " ";
+        }
+        if (rbtnEnfermedadRenal.isSelected()) {
+            enfermedades += rbtnEnfermedadRenal.getText() + " ";
+        }
+        if (rbtnHepatitis.isSelected()) {
+            enfermedades += rbtnHepatitis.getText() + " ";
+        }
+        if (rbtnVih.isSelected()) {
+            enfermedades += rbtnVih.getText() + " ";
+        }
+        if (rbtnDiabetes.isSelected()) {
+            enfermedades += rbtnDiabetes.getText();
+        }
+        if (rbtnNinguno.isSelected()) {
+            enfermedades = "";
+            rbtnDiabetes.setSelected(false);
+            rbtnEnfermedadCardiaca.setSelected(false);
+            rbtnEnfermedadRenal.setSelected(false);
+            rbtnPresionArterial.setSelected(false);
+            rbtnVih.setSelected(false);
+        }
+        
+
+        donador = new Donante(nombre, apellido, edad, sexo, tipoSangre, enfermedades, parentezco);
+
+        listaDonadores.insertarNodo(donador);
+        
+        informacionLista += listaDonadores.imprimirAristas();
+        
+        limpiar();
+        iniacilizar();
+        
     }//GEN-LAST:event_btnAgregarDonadorActionPerformed
 
     private void rbtnEnfermedadCardiacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnEnfermedadCardiacaActionPerformed
@@ -297,61 +364,6 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         // TODO add your handling code here:
-        /*
-        Donante donador;
-        
-        String nombre;
-        String apellido;
-        int edad;
-        String enfermedades = "";
-        String tipoSangre;
-        String sexo;
-        String parentezco;
-        
-        nombre = txtNombre.getText();
-        apellido = txtApellido.getText();
-        edad = Integer.parseInt(txtEdad.getText());
-        
-        tipoSangre = (String) cmbTipoSangre.getSelectedItem();
-        sexo = (String) cmbSexo.getSelectedItem();
-        
-        if(rbtnPresionArterial.isSelected()){
-            enfermedades += rbtnPresionArterial.getText();
-        }else if (rbtnEnfermedadCardiaca.isSelected()){
-            enfermedades += rbtnEnfermedadCardiaca + " ";
-        }else if (rbtnEnfermedadRenal.isSelected()){
-            enfermedades += rbtnEnfermedadRenal.getText() + " ";
-        }else if (rbtnHepatitis.isSelected()){
-            enfermedades += rbtnHepatitis.getText() + " ";
-        }else if (rbtnVih.isSelected()){
-            enfermedades += rbtnVih.getText() + " ";
-        }else if (rbtnDiabetes.isSelected()){
-            enfermedades += rbtnDiabetes.getText();
-        }else{
-            if(rbtnNinguno.isSelected()){
-                enfermedades = "";
-                rbtnDiabetes.setSelected(false);
-                rbtnEnfermedadCardiaca.setSelected(false);
-                rbtnEnfermedadRenal.setSelected(false);
-                rbtnPresionArterial.setSelected(false);
-                rbtnVih.setSelected(false);
-            }
-        }
-        /*
-        donador = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
-        
-        datosReceptor = receptor.toString();
-        */
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         GUI_DatosReceptor datosReceptor = new GUI_DatosReceptor();
         datosReceptor.setVisible(true);
@@ -403,6 +415,7 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     private void cmbGrado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGrado1ActionPerformed
         // TODO add your handling code here:
+      
     }//GEN-LAST:event_cmbGrado1ActionPerformed
 
     private void cmbGrado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGrado2ActionPerformed
@@ -443,6 +456,43 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void limpiar(){
+        txtApellido.setText("");
+        txtEdad.setText("");
+        txtNombre.setText("");
+        
+        cmbSexo.setSelectedIndex(0);
+        cmbTipoSangre.setSelectedIndex(0);
+        
+        cmbGrado1.setSelectedIndex(0);
+        cmbGrado2.setSelectedIndex(0);
+        cmbGrado3.setSelectedIndex(0);
+        
+        rbtnDiabetes.setSelected(false);
+        rbtnEnfermedadCardiaca.setSelected(false);
+        rbtnEnfermedadRenal.setSelected(false);
+        rbtnHepatitis.setSelected(false);
+        rbtnNinguno.setSelected(false);
+        rbtnPresionArterial.setSelected(false);
+        rbtnVih.setSelected(false);
+
+    }
+     public void iniacilizar(){
+         nombre = "";
+         apellido = "";
+         edad = 0;
+         parentezco = "";
+         sexo = "";
+         tipoSangre = "";
+         enfermedades = "";
+         
+         
+         
+         
+     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarDonador;
