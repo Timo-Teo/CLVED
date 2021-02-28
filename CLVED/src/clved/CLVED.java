@@ -24,7 +24,7 @@ public class CLVED {
         
         lista.insertarNodo(donador);
                 
-        
+
     }
     
 }
