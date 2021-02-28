@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
  */
 public class GUI_Receptor extends javax.swing.JFrame {
 
+    static String datosReceptor;
     /**
      * Creates new form GUI_Receptor
      */
@@ -301,6 +302,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         
         receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
         
+        datosReceptor = receptor.toString();
         
         
         

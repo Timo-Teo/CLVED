@@ -11,6 +11,8 @@ package clved;
  */
 public class Receptor {
     
+    
+    
     private String nombreReceptor;
     private String apellidoReceptor;
     private int edadReceptor;

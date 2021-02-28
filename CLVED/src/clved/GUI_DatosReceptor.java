@@ -11,12 +11,16 @@ package clved;
  */
 public class GUI_DatosReceptor extends javax.swing.JFrame {
 
+    
+    
     /**
      * Creates new form GUI_DatosReceptor
      */
     public GUI_DatosReceptor() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        txaResumenDatos.setText(GUI_Receptor.datosReceptor);
     }
 
     /**
@@ -37,6 +41,8 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
         btnNoCompatible = new javax.swing.JButton();
         btnCompatible = new javax.swing.JButton();
         lblClved = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaResumenDatos = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,6 +104,13 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
         lblClved.setText("CLVED");
         pnlFondo.add(lblClved);
         lblClved.setBounds(10, 10, 70, 34);
+
+        txaResumenDatos.setColumns(20);
+        txaResumenDatos.setRows(5);
+        jScrollPane1.setViewportView(txaResumenDatos);
+
+        pnlFondo.add(jScrollPane1);
+        jScrollPane1.setBounds(40, 100, 500, 230);
 
         getContentPane().add(pnlFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 440));
 
@@ -163,11 +176,13 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
     private javax.swing.JButton btnCompatible;
     private javax.swing.JButton btnNoCompatible;
     private javax.swing.JButton btnResumenSangre;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClved;
     private javax.swing.JLabel lblEnfermera;
     private javax.swing.JLabel lblRinion1;
     private javax.swing.JLabel lblRinoin;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlFondo;
+    private javax.swing.JTextArea txaResumenDatos;
     // End of variables declaration//GEN-END:variables
 }
