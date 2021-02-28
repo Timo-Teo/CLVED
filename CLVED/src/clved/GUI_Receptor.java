@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 public class GUI_Receptor extends javax.swing.JFrame {
 
     static String datosReceptor;
+
     /**
      * Creates new form GUI_Receptor
      */
@@ -258,85 +259,85 @@ public class GUI_Receptor extends javax.swing.JFrame {
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         // TODO add your handling code here:
-        
+
         //Ingresamos Informacion
-        
         Receptor receptor;
-        
+
         String nombre;
         String apellido;
         int edad;
         String enfermedades = "";
         String tipoSangre;
         String sexo;
-        
+
         nombre = txtNombre.getText();
         apellido = txtApellido.getText();
         edad = Integer.parseInt(txtEdad.getText());
-        
+
         tipoSangre = (String) cmbTipoSangre.getSelectedItem();
         sexo = (String) cmbSexo.getSelectedItem();
-        
-        if(rbtnPresionArterial.isSelected()){
+
+        if (rbtnPresionArterial.isSelected()) {
             enfermedades += rbtnPresionArterial.getText();
-        }else if (rbtnEnfermedadCardiaca.isSelected()){
-            enfermedades += rbtnEnfermedadCardiaca + " ";
-        }else if (rbtnEnfermedadRenal.isSelected()){
-            enfermedades += rbtnEnfermedadRenal.getText() + " ";
-        }else if (rbtnHepatitis.isSelected()){
-            enfermedades += rbtnHepatitis.getText() + " ";
-        }else if (rbtnVih.isSelected()){
-            enfermedades += rbtnVih.getText() + " ";
-        }else if (rbtnDiabetes.isSelected()){
-            enfermedades += rbtnDiabetes.getText();
-        }else{
-            if(rbtnNinguno.isSelected()){
-                enfermedades = "";
-                rbtnDiabetes.setSelected(false);
-                rbtnEnfermedadCardiaca.setSelected(false);
-                rbtnEnfermedadRenal.setSelected(false);
-                rbtnPresionArterial.setSelected(false);
-                rbtnVih.setSelected(false);
-            }
         }
-        
+        if (rbtnEnfermedadCardiaca.isSelected()) {
+            enfermedades += rbtnEnfermedadCardiaca.getText() + " ";
+        }
+        if (rbtnEnfermedadRenal.isSelected()) {
+            enfermedades += rbtnEnfermedadRenal.getText() + " ";
+        }
+        if (rbtnHepatitis.isSelected()) {
+            enfermedades += rbtnHepatitis.getText() + " ";
+        }
+        if (rbtnVih.isSelected()) {
+            enfermedades += rbtnVih.getText() + " ";
+        }
+        if (rbtnDiabetes.isSelected()) {
+            enfermedades += rbtnDiabetes.getText();
+        }
+        if (rbtnNinguno.isSelected()) {
+            enfermedades = "";
+            rbtnDiabetes.setSelected(false);
+            rbtnEnfermedadCardiaca.setSelected(false);
+            rbtnEnfermedadRenal.setSelected(false);
+            rbtnPresionArterial.setSelected(false);
+            rbtnVih.setSelected(false);
+        }
+
         receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
-        
+
         datosReceptor = receptor.toString();
-        
-        
-        
-        
+
         GUI_Donador donador = new GUI_Donador();
         donador.setVisible(true);
         dispose();
-  
+
     }//GEN-LAST:event_btnContinuarActionPerformed
 
     private void cmbTipoSangreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoSangreActionPerformed
         // TODO add your handling code here:
-        if( cmbTipoSangre.getSelectedItem().equals("A+")){
+        if (cmbTipoSangre.getSelectedItem().equals("A+")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/A+.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("A-")){
+        if (cmbTipoSangre.getSelectedItem().equals("A-")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/A-.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("B+")){
+        if (cmbTipoSangre.getSelectedItem().equals("B+")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/B+.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("B-")){
+        if (cmbTipoSangre.getSelectedItem().equals("B-")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/B-.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("O+")){
+        if (cmbTipoSangre.getSelectedItem().equals("O+")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/O+.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("AB+")){
+        if (cmbTipoSangre.getSelectedItem().equals("AB+")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AB+.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("AB-")){
+        if (cmbTipoSangre.getSelectedItem().equals("AB-")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AB-.png")));
         }
-        if( cmbTipoSangre.getSelectedItem().equals("O-")){
+        if (cmbTipoSangre.getSelectedItem().equals("O-")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/O-.png")));
         }
 
@@ -344,11 +345,13 @@ public class GUI_Receptor extends javax.swing.JFrame {
 
     private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
         // TODO add your handling code here:
-        if( cmbSexo.getSelectedItem().equals("Masculino")){
+        if (cmbSexo.getSelectedItem().equals("Masculino")) {
             lblUsuario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Hombre.png")));
-        }if( cmbSexo.getSelectedItem().equals("Femenino")){
+        }
+        if (cmbSexo.getSelectedItem().equals("Femenino")) {
             lblUsuario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Mujer.png")));
-        }if( cmbSexo.getSelectedItem().equals("Selecionar")){
+        }
+        if (cmbSexo.getSelectedItem().equals("Selecionar")) {
             lblUsuario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Usuario.png")));
         }
 

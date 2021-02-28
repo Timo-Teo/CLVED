@@ -198,7 +198,7 @@ public class GUI_Donador extends javax.swing.JFrame {
                         .addComponent(rbtnHepatitis)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbtnVih)
-                        .addGap(0, 5, Short.MAX_VALUE)))
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -297,6 +297,62 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         // TODO add your handling code here:
+        /*
+        Donante donador;
+        
+        String nombre;
+        String apellido;
+        int edad;
+        String enfermedades = "";
+        String tipoSangre;
+        String sexo;
+        String parentezco;
+        
+        nombre = txtNombre.getText();
+        apellido = txtApellido.getText();
+        edad = Integer.parseInt(txtEdad.getText());
+        
+        tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+        sexo = (String) cmbSexo.getSelectedItem();
+        
+        if(rbtnPresionArterial.isSelected()){
+            enfermedades += rbtnPresionArterial.getText();
+        }else if (rbtnEnfermedadCardiaca.isSelected()){
+            enfermedades += rbtnEnfermedadCardiaca + " ";
+        }else if (rbtnEnfermedadRenal.isSelected()){
+            enfermedades += rbtnEnfermedadRenal.getText() + " ";
+        }else if (rbtnHepatitis.isSelected()){
+            enfermedades += rbtnHepatitis.getText() + " ";
+        }else if (rbtnVih.isSelected()){
+            enfermedades += rbtnVih.getText() + " ";
+        }else if (rbtnDiabetes.isSelected()){
+            enfermedades += rbtnDiabetes.getText();
+        }else{
+            if(rbtnNinguno.isSelected()){
+                enfermedades = "";
+                rbtnDiabetes.setSelected(false);
+                rbtnEnfermedadCardiaca.setSelected(false);
+                rbtnEnfermedadRenal.setSelected(false);
+                rbtnPresionArterial.setSelected(false);
+                rbtnVih.setSelected(false);
+            }
+        }
+        /*
+        donador = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
+        
+        datosReceptor = receptor.toString();
+        */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         GUI_DatosReceptor datosReceptor = new GUI_DatosReceptor();
         datosReceptor.setVisible(true);
         dispose();
