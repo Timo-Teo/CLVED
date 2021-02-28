@@ -23,6 +23,9 @@ public class CLVED {
         Lista lista = new Lista();
         
         lista.insertarNodo(donador);
+        
+        MatrizTipoSangre matriz = new MatrizTipoSangre();
+        matriz.imprimi();
                 
 
     }

@@ -14,6 +14,11 @@ public class MatrizTipoSangre {
     String [][] matrizTipoSangre = new String [9][9];
     private String tipoSangreReceptor;
     String tipoSangreDonador;
+    int [][] matrizCompatibilidad = new int [8][8];
+    
+    
+    
+    
     
     public MatrizTipoSangre(){
        matrizTipoSangre[0][0] = " X ";
@@ -36,9 +41,41 @@ public class MatrizTipoSangre {
        
        for(int i = 1; i< matrizTipoSangre.length; i++){
            for(int j = 1; j < matrizTipoSangre.length; j++){
-               matrizTipoSangre [i][j] = "No";
+               matrizTipoSangre [i][j] = "-";
            }
        }
+             
+       matrizCompatibilidad [0][0] = 1;
+       matrizCompatibilidad [1][0] = 1;
+       matrizCompatibilidad [2][0] = 1;
+       matrizCompatibilidad [3][0] = 1;
+       matrizCompatibilidad [4][0] = 1;
+       matrizCompatibilidad [5][0] = 1;
+       matrizCompatibilidad [6][0] = 1;
+       matrizCompatibilidad [7][0] = 1;
+       matrizCompatibilidad [1][1] = 1;
+       matrizCompatibilidad [2][2] = 1;
+       matrizCompatibilidad [3][3] = 1;
+       matrizCompatibilidad [4][4] = 1;
+       matrizCompatibilidad [5][5] = 1;
+       matrizCompatibilidad [6][6] = 1;
+       matrizCompatibilidad [7][7] = 1;
+       matrizCompatibilidad [3][1] = 1;
+       matrizCompatibilidad [5][1] = 1;
+       matrizCompatibilidad [7][1] = 1;
+       matrizCompatibilidad [3][2] = 1;
+       matrizCompatibilidad [6][2] = 1;
+       matrizCompatibilidad [7][2] = 1;
+       matrizCompatibilidad [7][3] = 1;
+       matrizCompatibilidad [5][4] = 1;
+       matrizCompatibilidad [6][4] = 1;
+       matrizCompatibilidad [7][4] = 1;
+       matrizCompatibilidad [7][5] = 1;
+       matrizCompatibilidad [7][6] = 1;
+       
+       
+       
+       
 
     }
 
@@ -58,8 +95,13 @@ public class MatrizTipoSangre {
             if(tipoSangreReceptor.equals(matrizTipoSangre[i][0])){
                 while(j<9){
                     if(tipoSangreDonador.equals(matrizTipoSangre[0][j])){
-                        matrizTipoSangre[i][j] = "Si";
-                        break;
+                        if(matrizCompatibilidad[i-1][j-1] == 1){
+                            matrizTipoSangre[i][j] = "Si";
+                            break;
+                        }else{
+                            matrizTipoSangre[i][j] = "No";
+                            break;
+                        }
                     }
                     j++;
                 }
@@ -84,6 +126,26 @@ public class MatrizTipoSangre {
             salida+="|\n";
         }
         return salida;
+    }
+
+    
+    
+    public void imprimi() {
+        System.out.println("\n");
+        for(int k = 1; k <= matrizCompatibilidad.length; k++){
+                System.out.print("\t"+k);
+            }
+        System.out.println("\n");
+        for (int i = 0; i < matrizCompatibilidad.length; i++) {
+            System.out.print(i+1+"\t|");
+            for (int j = 0; j < matrizCompatibilidad[i].length; j++) {
+                System.out.print(matrizCompatibilidad[i][j]);
+                if (j != matrizCompatibilidad[i].length - 1) {
+                    System.out.print("\t");
+                }
+            }
+            System.out.println("|");
+        }
     }
 
     
