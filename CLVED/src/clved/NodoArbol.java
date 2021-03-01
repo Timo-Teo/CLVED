@@ -10,60 +10,20 @@ package clved;
  * @author Tim
  */
 public class NodoArbol {
-    
-    private NodoArbol izquierda;
-    private NodoArbol derecha;
-    private int porcentajeCompatibilidad;
-    private int FE;
-    
-    public NodoArbol (int clave){
-        this.derecha = null;
-        this.izquierda = null;
-        this.porcentajeCompatibilidad = clave;
-        this.FE = 0;
-    }
-    
-    public NodoArbol(NodoArbol ramaIzquierda, int clave, NodoArbol ramaDerecha){
-        this.izquierda = ramaIzquierda;
-        this.derecha = ramaDerecha;
-        this.porcentajeCompatibilidad = clave;
-        this.FE = 0;
-    }
-    
-    public NodoArbol(){
-    }
 
-    public NodoArbol getIzquierda() {
-        return izquierda;
-    }
+    public NodoArbol padre;
+    public NodoArbol derecha;
+    public NodoArbol izquierda;
+    public int llave;
+    public Object contenido;
 
-    public void setIzquierda(NodoArbol izquierda) {
-        this.izquierda = izquierda;
-    }
-
-    public NodoArbol getDerecha() {
-        return derecha;
-    }
-
-    public void setDerecha(NodoArbol derecha) {
-        this.derecha = derecha;
-    }
-
-    public int getInfo() {
-        return porcentajeCompatibilidad;
-    }
-
-    public void setInfo(int info) {
-        this.porcentajeCompatibilidad = info;
-    }
-
-    public int getFE() {
-        return FE;
-    }
-
-    public void setFE(int FE) {
-        this.FE = FE;
+    //CREAMOS UN CONSTRUCTOR QUE RECIBA UN INDICE PERO NO LOS DEMAS ATRIBUTOS
+    public NodoArbol(int indice) {
+        llave = indice;
+        derecha = null;
+        izquierda = null;
+        padre = null;
+        contenido = null;
     }
 
 }
-

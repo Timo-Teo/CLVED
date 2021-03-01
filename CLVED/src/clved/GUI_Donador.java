@@ -14,8 +14,9 @@ import javax.swing.ImageIcon;
 public class GUI_Donador extends javax.swing.JFrame {
 
     Lista listaDonadores = new Lista();
+    ArbolCompatiblidad arbolCompatibilidad = new ArbolCompatiblidad();
     Donante donador;
-
+    int i = 1;
         String nombre;
         String apellido;
         int edad;
@@ -25,6 +26,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         String parentezco;
         
     static String informacionLista = "";
+    static String informacionArbol = "";
     
     /**
      * Creates new form GUI_Donador
@@ -356,7 +358,11 @@ public class GUI_Donador extends javax.swing.JFrame {
 
         listaDonadores.insertarNodo(donador);
         
+        arbolCompatibilidad.insertar(i, donador);
+        
+        
         informacionLista += listaDonadores.imprimirAristas();
+        informacionArbol += arbolCompatibilidad.recorrer(arbolCompatibilidad.raiz);
         
         limpiar();
         iniacilizar();
@@ -491,7 +497,7 @@ public class GUI_Donador extends javax.swing.JFrame {
          sexo = "";
          tipoSangre = "";
          enfermedades = "";
-         
+         i++;
          
          
          
