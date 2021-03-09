@@ -18,21 +18,26 @@ public class CLVED {
         // TODO code application logic here
         //Test
         
-        Donante donador = new Donante("TImo","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
-        Donante donador1 = new Donante("T","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
-        Donante donador2 = new Donante("TIm","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
+        /*Donador donador = new Donador("TImo","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
+        Donador donador1 = new Donador("T","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
+        Donador donador2 = new Donador("TIm","Camuendo" , 15 ," Bien varon ", "El quiereas bb ", "Soy sano ", "Papa");
         Lista lista = new Lista();
         
         lista.insertarNodo(donador);
         
         MatrizTipoSangre matriz = new MatrizTipoSangre();
-        matriz.imprimi();
+        matriz.imprimirMatriz();
         
         ArbolCompatiblidad arbol = new ArbolCompatiblidad();
         arbol.insertar(1, donador);
         arbol.insertar(2, donador1);
         arbol.insertar(3, donador2);   
-        System.out.println(arbol.recorrer(arbol.raiz));
+        System.out.println(arbol.recorrer(arbol.raiz));*/
+        
+        MatrizTipoSangre matriz = new MatrizTipoSangre();
+        System.out.println(matriz.imprimirMatriz());
+        System.out.println(matriz.calcularPorcentajeCompatibilidadSangre("A-", "A+"));
+        System.out.println(matriz.imprimirMatrizPorcentajes());
 
     }
     

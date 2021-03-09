@@ -19,8 +19,8 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
     public GUI_DatosReceptor() {
         initComponents();
         setLocationRelativeTo(null);
-        
         txaResumenDatos.setText(GUI_Receptor.datosReceptor);
+        txaResumenDatos.setEditable(false);
     }
 
     /**
@@ -79,7 +79,7 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
 
         btnNoCompatible.setBackground(new java.awt.Color(255, 204, 204));
         btnNoCompatible.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        btnNoCompatible.setText("NO COMPATIBLES");
+        btnNoCompatible.setText("LISTA DONADORES");
         btnNoCompatible.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNoCompatibleActionPerformed(evt);
@@ -134,7 +134,7 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
 
     private void btnNoCompatibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoCompatibleActionPerformed
         // TODO add your handling code here:
-        GUI_NoCompatible noCompatible = new GUI_NoCompatible();
+        GUI_ListaDonadores noCompatible = new GUI_ListaDonadores();
         noCompatible.setVisible(true);
     }//GEN-LAST:event_btnNoCompatibleActionPerformed
 

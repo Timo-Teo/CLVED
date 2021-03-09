@@ -6,6 +6,7 @@
 package clved;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,7 +16,7 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     Lista listaDonadores = new Lista();
     ArbolCompatiblidad arbolCompatibilidad = new ArbolCompatiblidad();
-    Donante donador;
+    Donador donador;
     int i = 1;
         String nombre;
         String apellido;
@@ -24,6 +25,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         String tipoSangre;
         String sexo;
         String parentezco;
+        int gradoParentezco;
         
     static String informacionLista = "";
     static String informacionArbol = "";
@@ -46,6 +48,7 @@ public class GUI_Donador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupEnfermedades = new javax.swing.ButtonGroup();
         pnlFondo = new javax.swing.JPanel();
         lblTipoSangre = new javax.swing.JLabel();
         lblRinion = new javax.swing.JLabel();
@@ -61,9 +64,9 @@ public class GUI_Donador extends javax.swing.JFrame {
         pnlEnfermedades = new javax.swing.JPanel();
         rbtnPresionArterial = new javax.swing.JRadioButton();
         rbtnDiabetes = new javax.swing.JRadioButton();
-        rbtnHepatitis = new javax.swing.JRadioButton();
+        rbtnHepatitisTipoC = new javax.swing.JRadioButton();
         rbtnEnfermedadCardiaca = new javax.swing.JRadioButton();
-        rbtnEnfermedadRenal = new javax.swing.JRadioButton();
+        rbtnEnfermedadRenalCronica = new javax.swing.JRadioButton();
         rbtnNinguno = new javax.swing.JRadioButton();
         rbtnVih = new javax.swing.JRadioButton();
         btnContinuar = new javax.swing.JButton();
@@ -105,7 +108,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnAgregarDonador);
-        btnAgregarDonador.setBounds(420, 500, 220, 30);
+        btnAgregarDonador.setBounds(420, 510, 220, 30);
 
         lblNombres.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblNombres.setText("Nombres");
@@ -144,15 +147,19 @@ public class GUI_Donador extends javax.swing.JFrame {
         pnlEnfermedades.setBackground(new java.awt.Color(255, 255, 255));
         pnlEnfermedades.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
+        buttonGroupEnfermedades.add(rbtnPresionArterial);
         rbtnPresionArterial.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnPresionArterial.setText("Presión Arterial Alta");
 
+        buttonGroupEnfermedades.add(rbtnDiabetes);
         rbtnDiabetes.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnDiabetes.setText("Diabetes");
 
-        rbtnHepatitis.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        rbtnHepatitis.setText("Hepatitis");
+        buttonGroupEnfermedades.add(rbtnHepatitisTipoC);
+        rbtnHepatitisTipoC.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        rbtnHepatitisTipoC.setText("Hepatitis tipo C");
 
+        buttonGroupEnfermedades.add(rbtnEnfermedadCardiaca);
         rbtnEnfermedadCardiaca.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnEnfermedadCardiaca.setText("Enfermedad Cardiaca");
         rbtnEnfermedadCardiaca.addActionListener(new java.awt.event.ActionListener() {
@@ -161,12 +168,13 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
 
-        rbtnEnfermedadRenal.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        rbtnEnfermedadRenal.setText("Enfermedad Renal");
+        rbtnEnfermedadRenalCronica.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        rbtnEnfermedadRenalCronica.setText("Enfermedad Renal Crónica");
 
         rbtnNinguno.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnNinguno.setText("Ninguno");
 
+        buttonGroupEnfermedades.add(rbtnVih);
         rbtnVih.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnVih.setText("VIH");
 
@@ -177,22 +185,23 @@ public class GUI_Donador extends javax.swing.JFrame {
             .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rbtnHepatitis)
+                    .addComponent(rbtnHepatitisTipoC)
                     .addComponent(rbtnDiabetes)
                     .addComponent(rbtnPresionArterial)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
                         .addComponent(rbtnVih)
                         .addGap(110, 110, 110)))
                 .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnEnfermedadRenal)
-                            .addComponent(rbtnEnfermedadCardiaca))
-                        .addContainerGap(39, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
-                        .addComponent(rbtnNinguno)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(rbtnNinguno))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbtnEnfermedadRenalCronica)
+                            .addComponent(rbtnEnfermedadCardiaca))
+                        .addGap(6, 6, 6)))
+                .addContainerGap())
         );
         pnlEnfermedadesLayout.setVerticalGroup(
             pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,25 +209,26 @@ public class GUI_Donador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
-                        .addComponent(rbtnEnfermedadCardiaca)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnEnfermedadRenal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(rbtnNinguno))
                     .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
-                        .addComponent(rbtnPresionArterial)
+                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtnPresionArterial)
+                            .addComponent(rbtnEnfermedadCardiaca))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnDiabetes)
+                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtnDiabetes)
+                            .addComponent(rbtnEnfermedadRenalCronica))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnHepatitis)
+                        .addComponent(rbtnHepatitisTipoC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbtnVih)
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                        .addGap(0, 5, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         pnlFondo.add(pnlEnfermedades);
-        pnlEnfermedades.setBounds(420, 350, 410, 140);
+        pnlEnfermedades.setBounds(420, 350, 420, 140);
 
         btnContinuar.setBackground(new java.awt.Color(204, 255, 204));
         btnContinuar.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
@@ -229,7 +239,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnContinuar);
-        btnContinuar.setBounds(680, 520, 150, 30);
+        btnContinuar.setBounds(690, 510, 150, 30);
 
         cmbGrado3.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
         cmbGrado3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3er Grado", "Bisabuelo/a", "Tio/a", "Sobrino/a", "Bisnieto/a" }));
@@ -272,7 +282,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         cmbTipoSangre.setBounds(680, 190, 150, 30);
 
         cmbGrado1.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbGrado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1er Grado", "Conyugue", "Padre", "Madre", "Suegro/a", "Hijo/a", "Yerno", "Nuera", " ", " " }));
+        cmbGrado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1er Grado", "Padre", "Madre", "Hijo/a", "Hermano/a" }));
         cmbGrado1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGrado1ActionPerformed(evt);
@@ -282,7 +292,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         cmbGrado1.setBounds(420, 270, 130, 30);
 
         cmbGrado2.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbGrado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2do Grado", "Abuelo/a", "Hermano/a", "Cuñado/a", "Nieto/a" }));
+        cmbGrado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2do Grado", "Abuelo/a", "Nieto/a" }));
         cmbGrado2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGrado2ActionPerformed(evt);
@@ -301,11 +311,17 @@ public class GUI_Donador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -314,30 +330,26 @@ public class GUI_Donador extends javax.swing.JFrame {
     private void btnAgregarDonadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarDonadorActionPerformed
         // TODO add your handling code here:
         
+        
         nombre = txtNombre.getText();
         apellido = txtApellido.getText();
         edad = Integer.parseInt(txtEdad.getText());
-
         tipoSangre = (String) cmbTipoSangre.getSelectedItem();
         GUI_Receptor.miMatriz.insertar(tipoSangre);
-        
         sexo = (String) cmbSexo.getSelectedItem();
         
-        parentezco = (String) cmbGrado1.getSelectedItem();
-        parentezco = (String) cmbGrado2.getSelectedItem();
-        parentezco = (String) cmbGrado3.getSelectedItem();
-        
+
         if (rbtnPresionArterial.isSelected()) {
             enfermedades += rbtnPresionArterial.getText();
         }
         if (rbtnEnfermedadCardiaca.isSelected()) {
             enfermedades += rbtnEnfermedadCardiaca.getText() + " ";
         }
-        if (rbtnEnfermedadRenal.isSelected()) {
-            enfermedades += rbtnEnfermedadRenal.getText() + " ";
+        if (rbtnEnfermedadRenalCronica.isSelected()) {
+            enfermedades += rbtnEnfermedadRenalCronica.getText() + " ";
         }
-        if (rbtnHepatitis.isSelected()) {
-            enfermedades += rbtnHepatitis.getText() + " ";
+        if (rbtnHepatitisTipoC.isSelected()) {
+            enfermedades += rbtnHepatitisTipoC.getText() + " ";
         }
         if (rbtnVih.isSelected()) {
             enfermedades += rbtnVih.getText() + " ";
@@ -349,20 +361,20 @@ public class GUI_Donador extends javax.swing.JFrame {
             enfermedades = "";
             rbtnDiabetes.setSelected(false);
             rbtnEnfermedadCardiaca.setSelected(false);
-            rbtnEnfermedadRenal.setSelected(false);
+            rbtnEnfermedadRenalCronica.setSelected(false);
             rbtnPresionArterial.setSelected(false);
             rbtnVih.setSelected(false);
         }
         
-        donador = new Donante(nombre, apellido, edad, sexo, tipoSangre, enfermedades, parentezco);
+        donador = new Donador(nombre, apellido, edad, sexo, tipoSangre, enfermedades, parentezco);
 
         listaDonadores.insertarNodo(donador);
         
         arbolCompatibilidad.insertar(i, donador);
         
         
-        informacionLista += listaDonadores.imprimirAristas();
-        informacionArbol += arbolCompatibilidad.recorrer(arbolCompatibilidad.raiz);
+        informacionLista = listaDonadores.imprimirAristas();
+        informacionArbol = arbolCompatibilidad.recorrer(arbolCompatibilidad.raiz);
         
         limpiar();
         iniacilizar();
@@ -383,6 +395,18 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     private void cmbGrado3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGrado3ActionPerformed
         // TODO add your handling code here:
+        if(cmbGrado3.getSelectedItem().equals("Bisabuelo/a") ||
+                cmbGrado3.getSelectedItem().equals("Bisnieto/a") ||
+                cmbGrado3.getSelectedItem().equals("Tio/a") ||
+                cmbGrado3.getSelectedItem().equals("Sobrino/a")){
+            
+            cmbGrado1.setEnabled(false);
+            cmbGrado2.setEnabled(false);
+        }else{
+            cmbGrado1.setEnabled(true);
+            cmbGrado2.setEnabled(true);
+        }
+        parentezco = (String) cmbGrado3.getSelectedItem();
     }//GEN-LAST:event_cmbGrado3ActionPerformed
 
     private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
@@ -426,11 +450,34 @@ public class GUI_Donador extends javax.swing.JFrame {
 
     private void cmbGrado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGrado1ActionPerformed
         // TODO add your handling code here:
-      
+        
+        if(cmbGrado1.getSelectedItem().equals("Padre") ||
+                cmbGrado1.getSelectedItem().equals("Madre") ||
+                cmbGrado1.getSelectedItem().equals("Hijo/a") ||
+                cmbGrado1.getSelectedItem().equals("Hermano/a") ){
+            
+            cmbGrado2.setEnabled(false);
+            cmbGrado3.setEnabled(false);
+        }else{
+            cmbGrado2.setEnabled(true);
+            cmbGrado3.setEnabled(true);
+        }   
+        parentezco = (String) cmbGrado1.getSelectedItem();
+        
     }//GEN-LAST:event_cmbGrado1ActionPerformed
 
     private void cmbGrado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGrado2ActionPerformed
         // TODO add your handling code here:
+        if(cmbGrado2.getSelectedItem().equals("Abuelo/a") ||
+                cmbGrado2.getSelectedItem().equals("Nieto/a")){
+            
+            cmbGrado1.setEnabled(false);
+            cmbGrado3.setEnabled(false);
+        }else{
+            cmbGrado1.setEnabled(true);
+            cmbGrado3.setEnabled(true);
+        }
+        parentezco = (String) cmbGrado2.getSelectedItem();
     }//GEN-LAST:event_cmbGrado2ActionPerformed
 
     /**
@@ -482,8 +529,8 @@ public class GUI_Donador extends javax.swing.JFrame {
         
         rbtnDiabetes.setSelected(false);
         rbtnEnfermedadCardiaca.setSelected(false);
-        rbtnEnfermedadRenal.setSelected(false);
-        rbtnHepatitis.setSelected(false);
+        rbtnEnfermedadRenalCronica.setSelected(false);
+        rbtnHepatitisTipoC.setSelected(false);
         rbtnNinguno.setSelected(false);
         rbtnPresionArterial.setSelected(false);
         rbtnVih.setSelected(false);
@@ -498,9 +545,6 @@ public class GUI_Donador extends javax.swing.JFrame {
          tipoSangre = "";
          enfermedades = "";
          i++;
-         
-         
-         
      }
     
     
@@ -508,6 +552,7 @@ public class GUI_Donador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarDonador;
     private javax.swing.JButton btnContinuar;
+    private javax.swing.ButtonGroup buttonGroupEnfermedades;
     private javax.swing.JComboBox<String> cmbGrado1;
     private javax.swing.JComboBox<String> cmbGrado2;
     private javax.swing.JComboBox<String> cmbGrado3;
@@ -529,8 +574,8 @@ public class GUI_Donador extends javax.swing.JFrame {
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JRadioButton rbtnDiabetes;
     private javax.swing.JRadioButton rbtnEnfermedadCardiaca;
-    private javax.swing.JRadioButton rbtnEnfermedadRenal;
-    private javax.swing.JRadioButton rbtnHepatitis;
+    private javax.swing.JRadioButton rbtnEnfermedadRenalCronica;
+    private javax.swing.JRadioButton rbtnHepatitisTipoC;
     private javax.swing.JRadioButton rbtnNinguno;
     private javax.swing.JRadioButton rbtnPresionArterial;
     private javax.swing.JRadioButton rbtnVih;

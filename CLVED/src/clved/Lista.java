@@ -21,7 +21,7 @@ public class Lista {
         super();
     }
 
-    /*public void crearListaFinal(Donante miDonate){
+    /*public void crearListaFinal(Donador miDonate){
         this.P = new NodoLista();
         this.P.setINFO(miDonate);
         this.P.setLIGA(null);
@@ -38,7 +38,7 @@ public class Lista {
             
         }
     }*/
-    public void insertarNodo(Donante miDonate) {
+    public void insertarNodo(Donador miDonate) {
         if (this.P == null) {
             this.P = new NodoLista();
             this.P.setINFO(miDonate);

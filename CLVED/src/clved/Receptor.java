@@ -80,9 +80,9 @@ public class Receptor {
 
     @Override
     public String toString() {
-        return   "Nombre: " + nombreReceptor + "\nApellido: " + apellidoReceptor 
-                + "\nEdad: " + edadReceptor + "\nSexo: " + sexoReceptor 
-                + "\nTipo Sangre" + tipoSangreReceptor + "Enfermedad:" + enfermedadReceptor;
+        return   "NOMBRE: " + nombreReceptor + "\nAPELLIDO: " + apellidoReceptor 
+                + "\nEDAD: " + edadReceptor + "\nSEXO: " + sexoReceptor 
+                + "\nTIPO DE SANGRE: " + tipoSangreReceptor + "\nENFERMEDAD: " + enfermedadReceptor;
     }
     
     

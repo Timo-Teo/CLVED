@@ -18,6 +18,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         txaCompatibles.setText(GUI_Donador.informacionArbol);
+        txaCompatibles.setEditable(false);
     }
 
     /**
@@ -37,6 +38,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaCompatibles = new javax.swing.JTextArea();
+        btnAtrasDatosReceptor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +81,17 @@ public class GUI_Compatible extends javax.swing.JFrame {
         pnlFondo.add(jScrollPane1);
         jScrollPane1.setBounds(80, 90, 620, 240);
 
+        btnAtrasDatosReceptor.setBackground(new java.awt.Color(204, 204, 255));
+        btnAtrasDatosReceptor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnAtrasDatosReceptor.setText("Atrás");
+        btnAtrasDatosReceptor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasDatosReceptorActionPerformed(evt);
+            }
+        });
+        pnlFondo.add(btnAtrasDatosReceptor);
+        btnAtrasDatosReceptor.setBounds(600, 390, 120, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,6 +112,13 @@ public class GUI_Compatible extends javax.swing.JFrame {
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAtrasDatosReceptorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasDatosReceptorActionPerformed
+        // TODO add your handling code here:
+        GUI_DatosReceptor receptor = new GUI_DatosReceptor();
+        receptor.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAtrasDatosReceptorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,6 +156,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtrasDatosReceptor;
     private javax.swing.JButton btnSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClved;

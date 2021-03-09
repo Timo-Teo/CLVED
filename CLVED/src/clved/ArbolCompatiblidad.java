@@ -18,7 +18,8 @@ public class ArbolCompatiblidad {
     }
 
     //CREAMOS UN METODO PARA INSERTAR FRUTAS EN EL ARBOL
-    public void insertar(int i, Donante donante) {
+    public void insertar(int i, Donador donante) {
+        salida = "";
         NodoArbol n = new NodoArbol(i);
         n.contenido = donante.getNombreDonante();
 
@@ -57,11 +58,13 @@ public class ArbolCompatiblidad {
         
         if (n != null) {
             recorrer(n.izquierda);
-            salida += "Compatibilidad: " + n.llave + " Nombre:" + n.contenido+"\n";
+            salida += "COMPATIBILIDAD: " + n.llave +" %"+ " NOMBRE: " + n.contenido+"\n";
             recorrer(n.derecha);
         }
         
         return salida;
-
     }
+    
+    
+    
 }

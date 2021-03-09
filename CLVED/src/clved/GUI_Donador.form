@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupEnfermedades">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,12 +27,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlFondo" min="-2" pref="850" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="pnlFondo" min="-2" pref="864" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlFondo" min="-2" pref="560" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="pnlFondo" min="-2" pref="560" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -96,7 +108,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="420" y="500" width="220" height="30"/>
+              <AbsoluteConstraints x="420" y="510" width="220" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -203,7 +215,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="420" y="350" width="410" height="140"/>
+              <AbsoluteConstraints x="420" y="350" width="420" height="140"/>
             </Constraint>
           </Constraints>
 
@@ -213,7 +225,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="rbtnHepatitis" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbtnHepatitisTipoC" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="rbtnDiabetes" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="rbtnPresionArterial" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
@@ -222,19 +234,20 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rbtnEnfermedadRenal" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbtnEnfermedadCardiaca" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="39" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="rbtnNinguno" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="rbtnNinguno" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="46" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="rbtnEnfermedadRenalCronica" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnEnfermedadCardiaca" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -244,21 +257,24 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="rbtnEnfermedadCardiaca" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rbtnEnfermedadRenal" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="rbtnNinguno" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="rbtnPresionArterial" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="rbtnPresionArterial" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnEnfermedadCardiaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rbtnDiabetes" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="rbtnDiabetes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnEnfermedadRenalCronica" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rbtnHepatitis" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnHepatitisTipoC" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="rbtnVih" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -269,6 +285,9 @@
           <SubComponents>
             <Component class="javax.swing.JRadioButton" name="rbtnPresionArterial">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupEnfermedades"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
                 </Property>
@@ -277,22 +296,31 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbtnDiabetes">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupEnfermedades"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Diabetes"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbtnHepatitis">
+            <Component class="javax.swing.JRadioButton" name="rbtnHepatitisTipoC">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupEnfermedades"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Hepatitis"/>
+                <Property name="text" type="java.lang.String" value="Hepatitis tipo C"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbtnEnfermedadCardiaca">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupEnfermedades"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
                 </Property>
@@ -302,12 +330,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnEnfermedadCardiacaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbtnEnfermedadRenal">
+            <Component class="javax.swing.JRadioButton" name="rbtnEnfermedadRenalCronica">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Enfermedad Renal"/>
+                <Property name="text" type="java.lang.String" value="Enfermedad Renal Cr&#xf3;nica"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbtnNinguno">
@@ -320,6 +348,9 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbtnVih">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupEnfermedades"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
                 </Property>
@@ -343,7 +374,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="680" y="520" width="150" height="30"/>
+              <AbsoluteConstraints x="690" y="510" width="150" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -462,17 +493,12 @@
               <Font name="Trebuchet MS" size="20" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="10">
+              <StringArray count="5">
                 <StringItem index="0" value="1er Grado"/>
-                <StringItem index="1" value="Conyugue"/>
-                <StringItem index="2" value="Padre"/>
-                <StringItem index="3" value="Madre"/>
-                <StringItem index="4" value="Suegro/a"/>
-                <StringItem index="5" value="Hijo/a"/>
-                <StringItem index="6" value="Yerno"/>
-                <StringItem index="7" value="Nuera"/>
-                <StringItem index="8" value=" "/>
-                <StringItem index="9" value=" "/>
+                <StringItem index="1" value="Padre"/>
+                <StringItem index="2" value="Madre"/>
+                <StringItem index="3" value="Hijo/a"/>
+                <StringItem index="4" value="Hermano/a"/>
               </StringArray>
             </Property>
           </Properties>
@@ -494,12 +520,10 @@
               <Font name="Trebuchet MS" size="20" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="3">
                 <StringItem index="0" value="2do Grado"/>
                 <StringItem index="1" value="Abuelo/a"/>
-                <StringItem index="2" value="Hermano/a"/>
-                <StringItem index="3" value="Cu&#xf1;ado/a"/>
-                <StringItem index="4" value="Nieto/a"/>
+                <StringItem index="2" value="Nieto/a"/>
               </StringArray>
             </Property>
           </Properties>

@@ -9,15 +9,16 @@ package clved;
  *
  * @author Tim
  */
-public class GUI_NoCompatible extends javax.swing.JFrame {
+public class GUI_ListaDonadores extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI_NoCompatible
      */
-    public GUI_NoCompatible() {
+    public GUI_ListaDonadores() {
         initComponents();
         setLocationRelativeTo(null);
-        txaNoCompatibles.setText(GUI_Donador.informacionLista);
+        txaDonadoresregistrados.setText(GUI_Donador.informacionLista);
+        txaDonadoresregistrados.setEditable(false);
     }
 
     /**
@@ -36,7 +37,8 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
         lblClved = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txaNoCompatibles = new javax.swing.JTextArea();
+        txaDonadoresregistrados = new javax.swing.JTextArea();
+        btnAtrasDatosReceptor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,16 +47,16 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
 
         lblRinon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RiñonPequeño.png"))); // NOI18N
         pnlFondo.add(lblRinon2);
-        lblRinon2.setBounds(560, 10, 50, 50);
+        lblRinon2.setBounds(670, 10, 50, 50);
 
         lblTitulo.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        lblTitulo.setText("NO COMPATIBLES");
+        lblTitulo.setText("DONADORES REGISTRADOS");
         pnlFondo.add(lblTitulo);
-        lblTitulo.setBounds(250, 10, 310, 42);
+        lblTitulo.setBounds(180, 20, 460, 42);
 
         lblRinon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RiñonPequeño.png"))); // NOI18N
         pnlFondo.add(lblRinon1);
-        lblRinon1.setBounds(190, 10, 50, 50);
+        lblRinon1.setBounds(90, 10, 50, 50);
 
         lblClved.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblClved.setText("CLVED");
@@ -72,13 +74,24 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
         pnlFondo.add(btnSalir);
         btnSalir.setBounds(730, 390, 120, 30);
 
-        txaNoCompatibles.setColumns(20);
-        txaNoCompatibles.setFont(new java.awt.Font("MS PGothic", 0, 24)); // NOI18N
-        txaNoCompatibles.setRows(5);
-        jScrollPane1.setViewportView(txaNoCompatibles);
+        txaDonadoresregistrados.setColumns(20);
+        txaDonadoresregistrados.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txaDonadoresregistrados.setRows(5);
+        jScrollPane1.setViewportView(txaDonadoresregistrados);
 
         pnlFondo.add(jScrollPane1);
         jScrollPane1.setBounds(100, 80, 620, 280);
+
+        btnAtrasDatosReceptor.setBackground(new java.awt.Color(204, 204, 255));
+        btnAtrasDatosReceptor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnAtrasDatosReceptor.setText("Atrás");
+        btnAtrasDatosReceptor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasDatosReceptorActionPerformed(evt);
+            }
+        });
+        pnlFondo.add(btnAtrasDatosReceptor);
+        btnAtrasDatosReceptor.setBounds(600, 390, 120, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,6 +114,13 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnAtrasDatosReceptorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasDatosReceptorActionPerformed
+        // TODO add your handling code here:
+        GUI_DatosReceptor receptor = new GUI_DatosReceptor();
+        receptor.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAtrasDatosReceptorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -118,25 +138,27 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI_NoCompatible.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_ListaDonadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI_NoCompatible.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_ListaDonadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI_NoCompatible.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_ListaDonadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI_NoCompatible.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_ListaDonadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI_NoCompatible().setVisible(true);
+                new GUI_ListaDonadores().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtrasDatosReceptor;
     private javax.swing.JButton btnSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClved;
@@ -144,6 +166,6 @@ public class GUI_NoCompatible extends javax.swing.JFrame {
     private javax.swing.JLabel lblRinon2;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlFondo;
-    private javax.swing.JTextArea txaNoCompatibles;
+    private javax.swing.JTextArea txaDonadoresregistrados;
     // End of variables declaration//GEN-END:variables
 }

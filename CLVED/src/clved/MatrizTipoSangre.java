@@ -15,6 +15,7 @@ public class MatrizTipoSangre {
     private String tipoSangreReceptor;
     String tipoSangreDonador;
     int [][] matrizCompatibilidad = new int [8][8];
+    int [][] matrizCompatibilidadPorcentajes = new int [8][8];
     
     
     
@@ -73,10 +74,49 @@ public class MatrizTipoSangre {
        matrizCompatibilidad [7][5] = 1;
        matrizCompatibilidad [7][6] = 1;
        
-       
-       
-       
-
+       //INICIALIZAR MATRIZ DE COMPATILIDAD
+       matrizCompatibilidadPorcentajes [0][0] = 100;
+       matrizCompatibilidadPorcentajes [1][0] = 100;
+       matrizCompatibilidadPorcentajes [2][0] = 100;
+       matrizCompatibilidadPorcentajes [3][0] = 100;
+       matrizCompatibilidadPorcentajes [4][0] = 100;
+       matrizCompatibilidadPorcentajes [5][0] = 100;
+       matrizCompatibilidadPorcentajes [6][0] = 100;
+       matrizCompatibilidadPorcentajes [7][0] = 100;
+       matrizCompatibilidadPorcentajes [1][1] = 100;
+       matrizCompatibilidadPorcentajes [2][2] = 100;
+       matrizCompatibilidadPorcentajes [3][3] = 100;
+       matrizCompatibilidadPorcentajes [4][4] = 100;
+       matrizCompatibilidadPorcentajes [5][5] = 100;
+       matrizCompatibilidadPorcentajes [6][6] = 100;
+       matrizCompatibilidadPorcentajes [7][7] = 100;
+       matrizCompatibilidadPorcentajes [3][1] = 100;
+       matrizCompatibilidadPorcentajes [5][1] = 100;
+       matrizCompatibilidadPorcentajes [7][1] = 100;
+       matrizCompatibilidadPorcentajes [3][2] = 100;
+       matrizCompatibilidadPorcentajes [6][2] = 100;
+       matrizCompatibilidadPorcentajes [7][2] = 100;
+       matrizCompatibilidadPorcentajes [7][3] = 100;
+       matrizCompatibilidadPorcentajes [5][4] = 100;
+       matrizCompatibilidadPorcentajes [6][4] = 100;
+       matrizCompatibilidadPorcentajes [7][4] = 100;
+       matrizCompatibilidadPorcentajes [7][5] = 100;
+       matrizCompatibilidadPorcentajes [7][6] = 100;
+       matrizCompatibilidadPorcentajes [0][1] = 50;
+       matrizCompatibilidadPorcentajes [2][3] = 50;
+       matrizCompatibilidadPorcentajes [2][6] = 50;
+       matrizCompatibilidadPorcentajes [2][7] = 50;
+       matrizCompatibilidadPorcentajes [3][6] = 50;
+       matrizCompatibilidadPorcentajes [3][7] = 50;
+       matrizCompatibilidadPorcentajes [4][5] = 50;
+       matrizCompatibilidadPorcentajes [4][6] = 50;
+       matrizCompatibilidadPorcentajes [4][7] = 50;
+       matrizCompatibilidadPorcentajes [5][6] = 50;
+       matrizCompatibilidadPorcentajes [5][7] = 50;
+       matrizCompatibilidadPorcentajes [6][3] = 50;
+       matrizCompatibilidadPorcentajes [6][5] = 50;
+       matrizCompatibilidadPorcentajes [6][7] = 50;
+ 
     }
 
     public String getTipoSangreReceptor() {
@@ -90,7 +130,7 @@ public class MatrizTipoSangre {
     
     public void insertar( String tipoSangreDonador){
         int i = 1;
-        int j =1 ;
+        int j = 1 ;
         while(i<9){
             if(tipoSangreReceptor.equals(matrizTipoSangre[i][0])){
                 while(j<9){
@@ -112,41 +152,56 @@ public class MatrizTipoSangre {
         
     }
     
-    public String imprimiMatriz() {
+    public String imprimirMatriz() {
         String salida = "";
         
         for (int i = 0; i < matrizTipoSangre.length; i++) {
-            salida +="\t|";
+            salida +=" |";
             for (int j = 0; j < matrizTipoSangre[i].length; j++) {
                 salida += matrizTipoSangre[i][j] ;
                 if (j != matrizTipoSangre[i].length - 1) {
                     salida+="\t";
                 }
             }
-            salida+="|\n";
+            salida+="  |\n";
         }
         return salida;
     }
-
     
-    
-    public void imprimi() {
-        System.out.println("\n");
-        for(int k = 1; k <= matrizCompatibilidad.length; k++){
-                System.out.print("\t"+k);
-            }
-        System.out.println("\n");
-        for (int i = 0; i < matrizCompatibilidad.length; i++) {
-            System.out.print(i+1+"\t|");
-            for (int j = 0; j < matrizCompatibilidad[i].length; j++) {
-                System.out.print(matrizCompatibilidad[i][j]);
-                if (j != matrizCompatibilidad[i].length - 1) {
-                    System.out.print("\t");
+    public int calcularPorcentajeCompatibilidadSangre( String tipoSangreReceptor, String tipoSangreDonador){
+        int i = 1;
+        int j = 1 ;
+        while(i<9){
+            if(tipoSangreReceptor.equals(matrizTipoSangre[i][0])){
+                while(j<9){
+                    if(tipoSangreDonador.equals(matrizTipoSangre[0][j])){
+                        System.out.println(i);
+                        System.out.println(j);
+                        return matrizCompatibilidadPorcentajes [i -1] [j -1];
+                    }
+                    j++;
                 }
-            }
-            System.out.println("|");
+            } 
+            i++;
         }
+       return 0; 
     }
 
+    
+    public String imprimirMatrizPorcentajes() {
+        String salida = "";
+        
+        for (int i = 0; i < matrizCompatibilidadPorcentajes.length; i++) {
+            salida +=" |";
+            for (int j = 0; j < matrizCompatibilidadPorcentajes[i].length; j++) {
+                salida += matrizCompatibilidadPorcentajes[i][j] ;
+                if (j != matrizCompatibilidadPorcentajes[i].length - 1) {
+                    salida+="\t";
+                }
+            }
+            salida+="  |\n";
+        }
+        return salida;
+    }
     
 }

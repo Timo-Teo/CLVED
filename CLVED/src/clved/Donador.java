@@ -9,7 +9,7 @@ package clved;
  *
  * @author Tim
  */
-public class Donante {
+public class Donador {
     
     private String nombreDonante;
     private String apellidoDonante;
@@ -18,8 +18,9 @@ public class Donante {
     private String tipoSangreDonante;
     private String enfermedadDonante;
     private String parentezco;
+    
 
-    public Donante(String nombreDonante, String apellidoDonante, int edadDonante, 
+    public Donador(String nombreDonante, String apellidoDonante, int edadDonante, 
             String sexoDonante, String tipoSangreDonante, String enfermedadDonante, String parentezco) {
         this.nombreDonante = nombreDonante;
         this.apellidoDonante = apellidoDonante;
@@ -88,8 +89,11 @@ public class Donante {
 
     @Override
     public String toString() {
-        return "nombre Donante: " + nombreDonante + "\napellidoDonante: " + apellidoDonante + "\ntipoSangreDonante: " 
-                + tipoSangreDonante + "\nenfermedad: " + enfermedadDonante + "\nparentezco: " + parentezco;
+        return "NOMBRE DEL DONANTE: " + nombreDonante + "\nAPELLIDO DEL DONANTE: " 
+                + apellidoDonante + "\nTIPO DE SANGRE: " 
+                + tipoSangreDonante + "\nENFERMEDADES: " + enfermedadDonante 
+                + "\nPARENTEZCO: " + parentezco
+                +"\n------------------------------------------";
     }
     
     

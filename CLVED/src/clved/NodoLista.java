@@ -11,15 +11,15 @@ package clved;
  */
 public class NodoLista {
     
-    private Donante  INFO; // Guardamos donantes
+    private Donador  INFO; // Guardamos donantes
     private NodoLista LIGA;
     
-    public NodoLista(Donante miDonante, NodoLista liga){
+    public NodoLista(Donador miDonante, NodoLista liga){
         this.INFO = miDonante;
         this.LIGA = liga;
     }
     
-    public NodoLista (Donante miDonante){
+    public NodoLista (Donador miDonante){
         this.INFO = miDonante;
         this.LIGA = null;
     }
@@ -29,11 +29,11 @@ public class NodoLista {
        this.LIGA = null;
     }
 
-    public Donante getINFO() {
+    public Donador getINFO() {
         return INFO;
     }
 
-    public void setINFO(Donante INFO) {
+    public void setINFO(Donador INFO) {
         this.INFO = INFO;
     }
 
