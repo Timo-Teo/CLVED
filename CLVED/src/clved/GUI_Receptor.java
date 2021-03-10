@@ -12,9 +12,12 @@ import javax.swing.ImageIcon;
  * @author Tim
  */
 public class GUI_Receptor extends javax.swing.JFrame {
-
+    
+    static Receptor receptor;
     static String datosReceptor;
     static MatrizTipoSangre miMatriz = new MatrizTipoSangre();
+    
+    
 
     /**
      * Creates new form GUI_Receptor
@@ -33,6 +36,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupEnfermedadesReceptor = new javax.swing.ButtonGroup();
         pnlFondo = new javax.swing.JPanel();
         lblTipoSangre = new javax.swing.JLabel();
         lblRinon = new javax.swing.JLabel();
@@ -57,7 +61,6 @@ public class GUI_Receptor extends javax.swing.JFrame {
         rbtnHepatitis = new javax.swing.JRadioButton();
         rbtnEnfermedadCardiaca = new javax.swing.JRadioButton();
         rbtnEnfermedadRenal = new javax.swing.JRadioButton();
-        rbtnNinguno = new javax.swing.JRadioButton();
         rbtnVih = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -169,15 +172,19 @@ public class GUI_Receptor extends javax.swing.JFrame {
         pnlEnfermedades.setBackground(new java.awt.Color(255, 255, 255));
         pnlEnfermedades.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
+        buttonGroupEnfermedadesReceptor.add(rbtnPresionArterial);
         rbtnPresionArterial.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnPresionArterial.setText("Presión Arterial Alta");
 
+        buttonGroupEnfermedadesReceptor.add(rbtnDiabetes);
         rbtnDiabetes.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnDiabetes.setText("Diabetes");
 
+        buttonGroupEnfermedadesReceptor.add(rbtnHepatitis);
         rbtnHepatitis.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnHepatitis.setText("Hepatitis");
 
+        buttonGroupEnfermedadesReceptor.add(rbtnEnfermedadCardiaca);
         rbtnEnfermedadCardiaca.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnEnfermedadCardiaca.setText("Enfermedad Cardiaca");
         rbtnEnfermedadCardiaca.addActionListener(new java.awt.event.ActionListener() {
@@ -186,12 +193,11 @@ public class GUI_Receptor extends javax.swing.JFrame {
             }
         });
 
+        buttonGroupEnfermedadesReceptor.add(rbtnEnfermedadRenal);
         rbtnEnfermedadRenal.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        rbtnEnfermedadRenal.setText("Enfermedad Renal");
+        rbtnEnfermedadRenal.setText("Enfermedad Renal Crónica");
 
-        rbtnNinguno.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        rbtnNinguno.setText("Ninguno");
-
+        buttonGroupEnfermedadesReceptor.add(rbtnVih);
         rbtnVih.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnVih.setText("VIH");
 
@@ -208,16 +214,11 @@ public class GUI_Receptor extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
                         .addComponent(rbtnVih)
                         .addGap(110, 110, 110)))
+                .addGap(41, 41, 41)
                 .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnEnfermedadRenal)
-                            .addComponent(rbtnEnfermedadCardiaca))
-                        .addContainerGap(39, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
-                        .addComponent(rbtnNinguno)
-                        .addContainerGap())))
+                    .addComponent(rbtnEnfermedadRenal)
+                    .addComponent(rbtnEnfermedadCardiaca))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         pnlEnfermedadesLayout.setVerticalGroup(
             pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,9 +228,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
                     .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
                         .addComponent(rbtnEnfermedadCardiaca)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnEnfermedadRenal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbtnNinguno))
+                        .addComponent(rbtnEnfermedadRenal))
                     .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
                         .addComponent(rbtnPresionArterial)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -237,9 +236,8 @@ public class GUI_Receptor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbtnHepatitis)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnVih)
-                        .addGap(0, 10, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(rbtnVih)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pnlFondo.add(pnlEnfermedades);
@@ -270,7 +268,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         //Ingresamos Informacion
-        Receptor receptor;
+        
 
         String nombre;
         String apellido;
@@ -285,35 +283,35 @@ public class GUI_Receptor extends javax.swing.JFrame {
 
         tipoSangre = (String) cmbTipoSangre.getSelectedItem();
         miMatriz.setTipoSangreReceptor(tipoSangre);
+
         
         sexo = (String) cmbSexo.getSelectedItem();
 
         if (rbtnPresionArterial.isSelected()) {
-            enfermedades += rbtnPresionArterial.getText();
+            enfermedades = rbtnPresionArterial.getText();
+
         }
         if (rbtnEnfermedadCardiaca.isSelected()) {
-            enfermedades += rbtnEnfermedadCardiaca.getText() + " ";
+            enfermedades = rbtnEnfermedadCardiaca.getText();
+
         }
         if (rbtnEnfermedadRenal.isSelected()) {
-            enfermedades += rbtnEnfermedadRenal.getText() + " ";
+            enfermedades = rbtnEnfermedadRenal.getText();
+
         }
         if (rbtnHepatitis.isSelected()) {
-            enfermedades += rbtnHepatitis.getText() + " ";
+            enfermedades = rbtnHepatitis.getText();
+
         }
         if (rbtnVih.isSelected()) {
-            enfermedades += rbtnVih.getText() + " ";
+            enfermedades = rbtnVih.getText();
+
         }
         if (rbtnDiabetes.isSelected()) {
-            enfermedades += rbtnDiabetes.getText();
+            enfermedades = rbtnDiabetes.getText();
+
         }
-        if (rbtnNinguno.isSelected()) {
-            enfermedades = "";
-            rbtnDiabetes.setSelected(false);
-            rbtnEnfermedadCardiaca.setSelected(false);
-            rbtnEnfermedadRenal.setSelected(false);
-            rbtnPresionArterial.setSelected(false);
-            rbtnVih.setSelected(false);
-        }
+        
 
         receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
 
@@ -414,6 +412,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnContinuar;
+    private javax.swing.ButtonGroup buttonGroupEnfermedadesReceptor;
     private javax.swing.JComboBox<String> cmbSexo;
     private javax.swing.JComboBox<String> cmbTipoSangre;
     private javax.swing.JLabel lblApellidos;
@@ -432,7 +431,6 @@ public class GUI_Receptor extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnEnfermedadCardiaca;
     private javax.swing.JRadioButton rbtnEnfermedadRenal;
     private javax.swing.JRadioButton rbtnHepatitis;
-    private javax.swing.JRadioButton rbtnNinguno;
     private javax.swing.JRadioButton rbtnPresionArterial;
     private javax.swing.JRadioButton rbtnVih;
     private javax.swing.JTextField txtApellido;

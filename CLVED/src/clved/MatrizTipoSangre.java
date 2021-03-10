@@ -175,8 +175,7 @@ public class MatrizTipoSangre {
             if(tipoSangreReceptor.equals(matrizTipoSangre[i][0])){
                 while(j<9){
                     if(tipoSangreDonador.equals(matrizTipoSangre[0][j])){
-                        System.out.println(i);
-                        System.out.println(j);
+
                         return matrizCompatibilidadPorcentajes [i -1] [j -1];
                     }
                     j++;

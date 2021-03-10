@@ -36,7 +36,7 @@ public class CLVED {
         
         MatrizTipoSangre matriz = new MatrizTipoSangre();
         System.out.println(matriz.imprimirMatriz());
-        System.out.println(matriz.calcularPorcentajeCompatibilidadSangre("A-", "A+"));
+        System.out.println(matriz.calcularPorcentajeCompatibilidadSangre("A+", "A-"));
         System.out.println(matriz.imprimirMatrizPorcentajes());
 
     }

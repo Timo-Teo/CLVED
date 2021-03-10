@@ -13,18 +13,23 @@ import javax.swing.JOptionPane;
  * @author Tim
  */
 public class GUI_Donador extends javax.swing.JFrame {
-
+    
+    DonanteCompatible donadorC;
+    
+    
+    
     Lista listaDonadores = new Lista();
     ArbolCompatiblidad arbolCompatibilidad = new ArbolCompatiblidad();
     Donador donador;
-    int i = 1;
+    int porcentajeCompatiblidad;
         String nombre;
         String apellido;
         int edad;
-        String enfermedades = "";
+        String enfermedadDonador = "";
         String tipoSangre;
         String sexo;
         String parentezco;
+        int parentezcoCantidad;
         int gradoParentezco;
         
     static String informacionLista = "";
@@ -168,9 +173,11 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
 
+        buttonGroupEnfermedades.add(rbtnEnfermedadRenalCronica);
         rbtnEnfermedadRenalCronica.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnEnfermedadRenalCronica.setText("Enfermedad Renal Crónica");
 
+        buttonGroupEnfermedades.add(rbtnNinguno);
         rbtnNinguno.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtnNinguno.setText("Ninguno");
 
@@ -340,37 +347,39 @@ public class GUI_Donador extends javax.swing.JFrame {
         
 
         if (rbtnPresionArterial.isSelected()) {
-            enfermedades += rbtnPresionArterial.getText();
+            enfermedadDonador = rbtnPresionArterial.getText();
         }
         if (rbtnEnfermedadCardiaca.isSelected()) {
-            enfermedades += rbtnEnfermedadCardiaca.getText() + " ";
+            enfermedadDonador = rbtnEnfermedadCardiaca.getText();
         }
         if (rbtnEnfermedadRenalCronica.isSelected()) {
-            enfermedades += rbtnEnfermedadRenalCronica.getText() + " ";
+            enfermedadDonador = rbtnEnfermedadRenalCronica.getText();
         }
         if (rbtnHepatitisTipoC.isSelected()) {
-            enfermedades += rbtnHepatitisTipoC.getText() + " ";
+            enfermedadDonador = rbtnHepatitisTipoC.getText();
         }
         if (rbtnVih.isSelected()) {
-            enfermedades += rbtnVih.getText() + " ";
+            enfermedadDonador = rbtnVih.getText();
         }
         if (rbtnDiabetes.isSelected()) {
-            enfermedades += rbtnDiabetes.getText();
+            enfermedadDonador = rbtnDiabetes.getText();
         }
         if (rbtnNinguno.isSelected()) {
-            enfermedades = "";
-            rbtnDiabetes.setSelected(false);
-            rbtnEnfermedadCardiaca.setSelected(false);
-            rbtnEnfermedadRenalCronica.setSelected(false);
-            rbtnPresionArterial.setSelected(false);
-            rbtnVih.setSelected(false);
+            enfermedadDonador = "";
+            
         }
         
-        donador = new Donador(nombre, apellido, edad, sexo, tipoSangre, enfermedades, parentezco);
+        donador = new Donador(nombre, apellido, edad, sexo, tipoSangre, enfermedadDonador, parentezco);
 
         listaDonadores.insertarNodo(donador);
         
-        arbolCompatibilidad.insertar(i, donador);
+        
+        donadorC = new DonanteCompatible(tipoSangre, enfermedadDonador, parentezcoCantidad,GUI_Receptor.receptor.getTipoSangreReceptor());
+        donadorC.setEnfermedadR(GUI_Receptor.receptor.getEnfermedadReceptor());
+          
+        porcentajeCompatiblidad = donadorC.calcularPorcenteCompatibilidadTotal();
+        
+        arbolCompatibilidad.insertar(porcentajeCompatiblidad, donador);
         
         
         informacionLista = listaDonadores.imprimirAristas();
@@ -407,6 +416,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             cmbGrado2.setEnabled(true);
         }
         parentezco = (String) cmbGrado3.getSelectedItem();
+        parentezcoCantidad = 3;
     }//GEN-LAST:event_cmbGrado3ActionPerformed
 
     private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
@@ -463,6 +473,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             cmbGrado3.setEnabled(true);
         }   
         parentezco = (String) cmbGrado1.getSelectedItem();
+        parentezcoCantidad = 1;
         
     }//GEN-LAST:event_cmbGrado1ActionPerformed
 
@@ -478,6 +489,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             cmbGrado3.setEnabled(true);
         }
         parentezco = (String) cmbGrado2.getSelectedItem();
+        parentezcoCantidad = 2;
     }//GEN-LAST:event_cmbGrado2ActionPerformed
 
     /**
@@ -543,8 +555,8 @@ public class GUI_Donador extends javax.swing.JFrame {
          parentezco = "";
          sexo = "";
          tipoSangre = "";
-         enfermedades = "";
-         i++;
+         enfermedadDonador = "";
+         porcentajeCompatiblidad++;
      }
     
     
