@@ -6,18 +6,17 @@
 package clved;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Tim
  */
 public class GUI_Receptor extends javax.swing.JFrame {
-    
+
     static Receptor receptor;
     static String datosReceptor;
     static MatrizTipoSangre miMatriz = new MatrizTipoSangre();
-    
-    
 
     /**
      * Creates new form GUI_Receptor
@@ -26,6 +25,11 @@ public class GUI_Receptor extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
+        txtNombre.setEnabled(false);
+        txtApellido.setEnabled(false);
+        txtEdad.setEnabled(false);
+        // btnContinuar.setEnabled(false);
+
     }
 
     /**
@@ -140,7 +144,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         btnContinuar.setBounds(690, 490, 150, 30);
 
         cmbTipoSangre.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" }));
+        cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" }));
         cmbTipoSangre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTipoSangreActionPerformed(evt);
@@ -275,8 +279,6 @@ public class GUI_Receptor extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         //Ingresamos Informacion
-        
-
         String nombre;
         String apellido;
         int edad;
@@ -284,49 +286,59 @@ public class GUI_Receptor extends javax.swing.JFrame {
         String tipoSangre;
         String sexo;
 
-        nombre = txtNombre.getText();
-        apellido = txtApellido.getText();
-        edad = Integer.parseInt(txtEdad.getText());
+        //si es selecionar
+        try {
+            nombre = txtNombre.getText();
+            apellido = txtApellido.getText();
+            
+            
+            edad = Integer.parseInt(txtEdad.getText());
+            if(edad < 0){
+                JOptionPane.showMessageDialog(null, "Ingrese una edad valida", "Edad", JOptionPane.WARNING_MESSAGE);
+            }
 
-        tipoSangre = (String) cmbTipoSangre.getSelectedItem();
-        miMatriz.setTipoSangreReceptor(tipoSangre);
+            tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+            miMatriz.setTipoSangreReceptor(tipoSangre);
 
-        
-        sexo = (String) cmbSexo.getSelectedItem();
+            sexo = (String) cmbSexo.getSelectedItem();
 
-        if (rbtnPresionArterial.isSelected()) {
-            enfermedades = rbtnPresionArterial.getText();
+            if (rbtnPresionArterial.isSelected()) {
+                enfermedades = rbtnPresionArterial.getText();
 
+            }
+            if (rbtnEnfermedadCardiaca.isSelected()) {
+                enfermedades = rbtnEnfermedadCardiaca.getText();
+
+            }
+            if (rbtnEnfermedadRenal.isSelected()) {
+                enfermedades = rbtnEnfermedadRenal.getText();
+
+            }
+            if (rbtnHepatitis.isSelected()) {
+                enfermedades = rbtnHepatitis.getText();
+
+            }
+            if (rbtnVih.isSelected()) {
+                enfermedades = rbtnVih.getText();
+
+            }
+            if (rbtnDiabetes.isSelected()) {
+                enfermedades = rbtnDiabetes.getText();
+
+            }
+
+            receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
+
+            datosReceptor = receptor.toString();
+
+            GUI_Donador donador = new GUI_Donador();
+            donador.setVisible(true);
+            dispose();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ingrese Todos los datos", "Datos", JOptionPane.WARNING_MESSAGE);
         }
-        if (rbtnEnfermedadCardiaca.isSelected()) {
-            enfermedades = rbtnEnfermedadCardiaca.getText();
 
-        }
-        if (rbtnEnfermedadRenal.isSelected()) {
-            enfermedades = rbtnEnfermedadRenal.getText();
-
-        }
-        if (rbtnHepatitis.isSelected()) {
-            enfermedades = rbtnHepatitis.getText();
-
-        }
-        if (rbtnVih.isSelected()) {
-            enfermedades = rbtnVih.getText();
-
-        }
-        if (rbtnDiabetes.isSelected()) {
-            enfermedades = rbtnDiabetes.getText();
-
-        }
-        
-
-        receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
-
-        datosReceptor = receptor.toString();
-
-        GUI_Donador donador = new GUI_Donador();
-        donador.setVisible(true);
-        dispose();
 
     }//GEN-LAST:event_btnContinuarActionPerformed
 
@@ -334,6 +346,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cmbTipoSangre.getSelectedItem().equals("A+")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/A+.png")));
+
         }
         if (cmbTipoSangre.getSelectedItem().equals("A-")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/A-.png")));
@@ -356,6 +369,10 @@ public class GUI_Receptor extends javax.swing.JFrame {
         if (cmbTipoSangre.getSelectedItem().equals("O-")) {
             lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/O-.png")));
         }
+        if (cmbTipoSangre.getSelectedItem().equals("Seleccionar")) {
+            lblTipoSangre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/tipo-de-sangre.png")));
+
+        }
 
     }//GEN-LAST:event_cmbTipoSangreActionPerformed
 
@@ -363,12 +380,23 @@ public class GUI_Receptor extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cmbSexo.getSelectedItem().equals("Masculino")) {
             lblUsuario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Hombre.png")));
+            txtNombre.setEnabled(true);
+            txtApellido.setEnabled(true);
+            txtEdad.setEnabled(true);
+
         }
         if (cmbSexo.getSelectedItem().equals("Femenino")) {
             lblUsuario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Mujer.png")));
+            txtNombre.setEnabled(true);
+            txtApellido.setEnabled(true);
+            txtEdad.setEnabled(true);
         }
         if (cmbSexo.getSelectedItem().equals("Selecionar")) {
             lblUsuario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Usuario.png")));
+            txtNombre.setEnabled(false);
+            txtApellido.setEnabled(false);
+            txtEdad.setEnabled(false);
+
         }
 
     }//GEN-LAST:event_cmbSexoActionPerformed
