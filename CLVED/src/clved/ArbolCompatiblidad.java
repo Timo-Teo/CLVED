@@ -13,6 +13,7 @@ public class ArbolCompatiblidad {
 
     NodoArbol raiz;
     String salida="";
+     String nombreDonador;
     public ArbolCompatiblidad() {
         raiz = null;
     }
@@ -21,8 +22,8 @@ public class ArbolCompatiblidad {
     public void insertar(int i, Donador donante) {
         salida = "";
         NodoArbol n = new NodoArbol(i);
-        n.contenido = donante.getNombreDonante();
-
+        n.contenido = donante.getNombreDonante() +" "+ donante.getApellidoDonante();
+        
         //SI LA RAIZ ES NULA SIGNIFICA QUE NO HA EMPEZADO A CRECER EL ARBOL
         if (raiz == null) {
             raiz = n;
@@ -58,7 +59,10 @@ public class ArbolCompatiblidad {
         
         if (n != null) {
             recorrer(n.izquierda);
-            salida += "COMPATIBILIDAD: " + n.llave +" %"+ " NOMBRE: " + n.contenido+"\n";
+            if(n.llave < 0){
+                n.llave = 0;
+            }
+            salida += "PORCENTAJE DE COMPATIBILIDAD: " + n.llave+" %"+ " ---> " + n.contenido+"\n";
             recorrer(n.derecha);
         }
         

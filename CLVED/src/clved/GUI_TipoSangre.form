@@ -23,12 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlFondo" min="-2" pref="870" max="-2" attributes="0"/>
+          <Component id="pnlFondo" min="-2" pref="814" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlFondo" min="-2" pref="440" max="-2" attributes="0"/>
+          <Component id="pnlFondo" min="-2" pref="422" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -103,7 +103,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="390" width="70" height="34"/>
+              <AbsoluteConstraints x="10" y="370" width="70" height="34"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -122,7 +122,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="730" y="390" width="120" height="30"/>
+              <AbsoluteConstraints x="650" y="360" width="120" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -132,7 +132,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="40" y="90" width="780" height="240"/>
+              <AbsoluteConstraints x="40" y="90" width="730" height="210"/>
             </Constraint>
           </Constraints>
 
@@ -154,14 +154,15 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Atr&#xe1;s"/>
+            <Property name="text" type="java.lang.String" value="ATR&#xc1;S"/>
+            <Property name="actionCommand" type="java.lang.String" value="ATR&#xc1;S"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtrasDatosReceptorActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="600" y="390" width="120" height="30"/>
+              <AbsoluteConstraints x="490" y="360" width="120" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

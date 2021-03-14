@@ -5,6 +5,8 @@
  */
 package clved;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Tim
@@ -17,6 +19,7 @@ public class GUI_Menu extends javax.swing.JFrame {
     public GUI_Menu() {
         initComponents();
         setLocationRelativeTo(null);
+       this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
     }
 
     /**

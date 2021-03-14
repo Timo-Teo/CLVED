@@ -5,6 +5,8 @@
  */
 package clved;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Tim
@@ -17,6 +19,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
     public GUI_Compatible() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
         txaCompatibles.setText(GUI_Donador.informacionArbol);
         txaCompatibles.setEditable(false);
     }
@@ -75,6 +78,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
         btnSalir.setBounds(730, 390, 120, 30);
 
         txaCompatibles.setColumns(20);
+        txaCompatibles.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         txaCompatibles.setRows(5);
         jScrollPane1.setViewportView(txaCompatibles);
 
@@ -83,7 +87,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
 
         btnAtrasDatosReceptor.setBackground(new java.awt.Color(204, 204, 255));
         btnAtrasDatosReceptor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnAtrasDatosReceptor.setText("Atrás");
+        btnAtrasDatosReceptor.setText("ATRÁS");
         btnAtrasDatosReceptor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasDatosReceptorActionPerformed(evt);

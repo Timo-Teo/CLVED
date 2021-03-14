@@ -91,7 +91,7 @@ public class Donador {
     public String toString() {
         return "NOMBRE DEL DONANTE: " + nombreDonante + "\nAPELLIDO DEL DONANTE: " 
                 + apellidoDonante + "\nTIPO DE SANGRE: " 
-                + tipoSangreDonante + "\nENFERMEDADES: " + enfermedadDonante 
+                + tipoSangreDonante + "\nENFERMEDA: " + enfermedadDonante 
                 + "\nPARENTEZCO: " + parentezco
                 +"\n------------------------------------------";
     }

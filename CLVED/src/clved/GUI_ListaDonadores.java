@@ -5,6 +5,8 @@
  */
 package clved;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Tim
@@ -17,6 +19,7 @@ public class GUI_ListaDonadores extends javax.swing.JFrame {
     public GUI_ListaDonadores() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
         txaDonadoresregistrados.setText(GUI_Donador.informacionLista);
         txaDonadoresregistrados.setEditable(false);
     }
@@ -61,7 +64,7 @@ public class GUI_ListaDonadores extends javax.swing.JFrame {
         lblClved.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblClved.setText("CLVED");
         pnlFondo.add(lblClved);
-        lblClved.setBounds(10, 390, 70, 34);
+        lblClved.setBounds(20, 390, 70, 34);
 
         btnSalir.setBackground(new java.awt.Color(255, 204, 204));
         btnSalir.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
@@ -72,32 +75,34 @@ public class GUI_ListaDonadores extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnSalir);
-        btnSalir.setBounds(730, 390, 120, 30);
+        btnSalir.setBounds(590, 390, 120, 30);
 
         txaDonadoresregistrados.setColumns(20);
-        txaDonadoresregistrados.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txaDonadoresregistrados.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         txaDonadoresregistrados.setRows(5);
         jScrollPane1.setViewportView(txaDonadoresregistrados);
 
         pnlFondo.add(jScrollPane1);
-        jScrollPane1.setBounds(100, 80, 620, 280);
+        jScrollPane1.setBounds(90, 80, 620, 280);
 
         btnAtrasDatosReceptor.setBackground(new java.awt.Color(204, 204, 255));
         btnAtrasDatosReceptor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnAtrasDatosReceptor.setText("Atrás");
+        btnAtrasDatosReceptor.setText("ATRÁS");
         btnAtrasDatosReceptor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasDatosReceptorActionPerformed(evt);
             }
         });
         pnlFondo.add(btnAtrasDatosReceptor);
-        btnAtrasDatosReceptor.setBounds(600, 390, 120, 30);
+        btnAtrasDatosReceptor.setBounds(440, 390, 120, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

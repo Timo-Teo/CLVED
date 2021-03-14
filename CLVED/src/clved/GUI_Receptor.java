@@ -25,6 +25,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
     public GUI_Receptor() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
     }
 
     /**
@@ -62,6 +63,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         rbtnEnfermedadCardiaca = new javax.swing.JRadioButton();
         rbtnEnfermedadRenal = new javax.swing.JRadioButton();
         rbtnVih = new javax.swing.JRadioButton();
+        lblTipodeSangre1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,19 +95,19 @@ public class GUI_Receptor extends javax.swing.JFrame {
         btnCancelar.setBounds(510, 490, 150, 30);
 
         lblNombres.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblNombres.setText("Nombres");
+        lblNombres.setText("Nombre");
         pnlFondo.add(lblNombres);
         lblNombres.setBounds(40, 270, 99, 29);
 
         lblApellidos.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblApellidos.setText("Apellidos");
+        lblApellidos.setText("Apellido");
         pnlFondo.add(lblApellidos);
-        lblApellidos.setBounds(40, 310, 102, 29);
+        lblApellidos.setBounds(40, 310, 92, 29);
 
         lblEnfermedades.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblEnfermedades.setText("Enfermedades");
+        lblEnfermedades.setText("Enfermedad");
         pnlFondo.add(lblEnfermedades);
-        lblEnfermedades.setBounds(550, 290, 180, 29);
+        lblEnfermedades.setBounds(560, 290, 140, 29);
 
         lblSexo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblSexo.setText("Sexo");
@@ -118,9 +120,9 @@ public class GUI_Receptor extends javax.swing.JFrame {
         lblEdad.setBounds(40, 350, 55, 29);
 
         lblTipodeSangre.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblTipodeSangre.setText("Tipo de Sangre");
+        lblTipodeSangre.setText("TÚ INFORMACIÓN");
         pnlFondo.add(lblTipodeSangre);
-        lblTipodeSangre.setBounds(440, 230, 180, 29);
+        lblTipodeSangre.setBounds(330, 10, 200, 29);
 
         lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Usuario.png"))); // NOI18N
         pnlFondo.add(lblUsuario);
@@ -135,7 +137,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnContinuar);
-        btnContinuar.setBounds(680, 490, 150, 30);
+        btnContinuar.setBounds(690, 490, 150, 30);
 
         cmbTipoSangre.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
         cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" }));
@@ -145,7 +147,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(cmbTipoSangre);
-        cmbTipoSangre.setBounds(670, 230, 150, 30);
+        cmbTipoSangre.setBounds(680, 230, 160, 30);
 
         cmbSexo.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Femenino", "Masculino" }));
@@ -243,11 +245,16 @@ public class GUI_Receptor extends javax.swing.JFrame {
         pnlFondo.add(pnlEnfermedades);
         pnlEnfermedades.setBounds(430, 330, 410, 140);
 
+        lblTipodeSangre1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTipodeSangre1.setText("Tipo de Sangre");
+        pnlFondo.add(lblTipodeSangre1);
+        lblTipodeSangre1.setBounds(430, 230, 180, 29);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 864, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,6 +431,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTipoSangre;
     private javax.swing.JLabel lblTipodeSangre;
+    private javax.swing.JLabel lblTipodeSangre1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPanel pnlEnfermedades;
     private javax.swing.JPanel pnlFondo;

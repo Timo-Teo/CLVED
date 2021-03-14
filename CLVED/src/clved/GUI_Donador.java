@@ -15,9 +15,7 @@ import javax.swing.JOptionPane;
 public class GUI_Donador extends javax.swing.JFrame {
     
     DonanteCompatible donadorC;
-    
-    
-    
+        
     Lista listaDonadores = new Lista();
     ArbolCompatiblidad arbolCompatibilidad = new ArbolCompatiblidad();
     Donador donador;
@@ -25,15 +23,15 @@ public class GUI_Donador extends javax.swing.JFrame {
         String nombre;
         String apellido;
         int edad;
-        String enfermedadDonador = "";
+        String enfermedadDonador;
         String tipoSangre;
         String sexo;
         String parentezco;
         int parentezcoCantidad;
         int gradoParentezco;
         
-    static String informacionLista = "";
-    static String informacionArbol = "";
+    static String informacionLista;
+    static String informacionArbol;
     
     /**
      * Creates new form GUI_Donador
@@ -41,6 +39,7 @@ public class GUI_Donador extends javax.swing.JFrame {
     public GUI_Donador() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
         
     }
 
@@ -116,19 +115,19 @@ public class GUI_Donador extends javax.swing.JFrame {
         btnAgregarDonador.setBounds(420, 510, 220, 30);
 
         lblNombres.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblNombres.setText("Nombres");
+        lblNombres.setText("Nombre");
         pnlFondo.add(lblNombres);
         lblNombres.setBounds(20, 270, 99, 29);
 
         lblApellidos.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblApellidos.setText("Apellidos");
+        lblApellidos.setText("Apellido");
         pnlFondo.add(lblApellidos);
-        lblApellidos.setBounds(20, 310, 102, 29);
+        lblApellidos.setBounds(20, 310, 92, 29);
 
         lblEnfermedades.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        lblEnfermedades.setText("Enfermedades");
+        lblEnfermedades.setText("Enfermedad");
         pnlFondo.add(lblEnfermedades);
-        lblEnfermedades.setBounds(550, 310, 180, 29);
+        lblEnfermedades.setBounds(560, 310, 150, 29);
 
         lblSexo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblSexo.setText("Sexo");
@@ -147,7 +146,7 @@ public class GUI_Donador extends javax.swing.JFrame {
 
         lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Usuario.png"))); // NOI18N
         pnlFondo.add(lblUsuario);
-        lblUsuario.setBounds(80, 30, 160, 150);
+        lblUsuario.setBounds(90, 30, 160, 150);
 
         pnlEnfermedades.setBackground(new java.awt.Color(255, 255, 255));
         pnlEnfermedades.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -198,44 +197,36 @@ public class GUI_Donador extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
                         .addComponent(rbtnVih)
                         .addGap(110, 110, 110)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(rbtnNinguno))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnEnfermedadRenalCronica)
-                            .addComponent(rbtnEnfermedadCardiaca))
-                        .addGap(6, 6, 6)))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(rbtnEnfermedadRenalCronica)
+                        .addComponent(rbtnEnfermedadCardiaca))
+                    .addComponent(rbtnNinguno, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(12, 12, 12))
         );
         pnlEnfermedadesLayout.setVerticalGroup(
             pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbtnNinguno))
-                    .addGroup(pnlEnfermedadesLayout.createSequentialGroup()
-                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbtnPresionArterial)
-                            .addComponent(rbtnEnfermedadCardiaca))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbtnDiabetes)
-                            .addComponent(rbtnEnfermedadRenalCronica))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnHepatitisTipoC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnVih)
-                        .addGap(0, 5, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnPresionArterial)
+                    .addComponent(rbtnEnfermedadCardiaca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnDiabetes)
+                    .addComponent(rbtnEnfermedadRenalCronica))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rbtnHepatitisTipoC)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlEnfermedadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnVih)
+                    .addComponent(rbtnNinguno))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlFondo.add(pnlEnfermedades);
-        pnlEnfermedades.setBounds(420, 350, 420, 140);
+        pnlEnfermedades.setBounds(420, 350, 430, 140);
 
         btnContinuar.setBackground(new java.awt.Color(204, 255, 204));
         btnContinuar.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
@@ -276,7 +267,7 @@ public class GUI_Donador extends javax.swing.JFrame {
         lblTipoSangrel.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblTipoSangrel.setText("Tipo de Sangre");
         pnlFondo.add(lblTipoSangrel);
-        lblTipoSangrel.setBounds(430, 190, 180, 29);
+        lblTipoSangrel.setBounds(420, 190, 180, 29);
 
         cmbTipoSangre.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
         cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" }));
@@ -286,7 +277,7 @@ public class GUI_Donador extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(cmbTipoSangre);
-        cmbTipoSangre.setBounds(680, 190, 150, 30);
+        cmbTipoSangre.setBounds(700, 190, 150, 30);
 
         cmbGrado1.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
         cmbGrado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1er Grado", "Padre", "Madre", "Hijo/a", "Hermano/a" }));
@@ -318,17 +309,11 @@ public class GUI_Donador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
         );
 
         pack();

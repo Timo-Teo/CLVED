@@ -5,6 +5,8 @@
  */
 package clved;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Tim
@@ -19,6 +21,7 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
     public GUI_DatosReceptor() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Riñon.png")).getImage());
         txaResumenDatos.setText(GUI_Receptor.datosReceptor);
         txaResumenDatos.setEditable(false);
     }
@@ -71,7 +74,7 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnResumenSangre);
-        btnResumenSangre.setBounds(620, 380, 210, 33);
+        btnResumenSangre.setBounds(40, 380, 210, 33);
 
         lblRinoin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RiñonPequeño.png"))); // NOI18N
         pnlFondo.add(lblRinoin);
@@ -97,7 +100,7 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnCompatible);
-        btnCompatible.setBounds(40, 380, 210, 33);
+        btnCompatible.setBounds(620, 380, 210, 33);
 
         lblClved.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblClved.setText("CLVED");
@@ -105,6 +108,7 @@ public class GUI_DatosReceptor extends javax.swing.JFrame {
         lblClved.setBounds(10, 10, 70, 34);
 
         txaResumenDatos.setColumns(20);
+        txaResumenDatos.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         txaResumenDatos.setRows(5);
         jScrollPane1.setViewportView(txaResumenDatos);
 
