@@ -287,17 +287,26 @@ public class GUI_Receptor extends javax.swing.JFrame {
         String sexo;
 
         //si es selecionar
+        
         try {
+            
             nombre = txtNombre.getText();
             apellido = txtApellido.getText();
-            
+            if(nombre.equals("") || apellido.equals("")){
+                JOptionPane.showMessageDialog(null, "Error","Error", JOptionPane.WARNING_MESSAGE);
+            }else{
             
             edad = Integer.parseInt(txtEdad.getText());
-            if(edad < 0){
+            if(edad <= 0){
                 JOptionPane.showMessageDialog(null, "Ingrese una edad valida", "Edad", JOptionPane.WARNING_MESSAGE);
+                btnContinuar.wait();
             }
-
+            
+            
             tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+            if(cmbTipoSangre.getSelectedItem().equals("Seleccionar")){
+                JOptionPane.showMessageDialog(null, "Error","Error", JOptionPane.WARNING_MESSAGE);
+            }else{
             miMatriz.setTipoSangreReceptor(tipoSangre);
 
             sexo = (String) cmbSexo.getSelectedItem();
@@ -326,7 +335,9 @@ public class GUI_Receptor extends javax.swing.JFrame {
                 enfermedades = rbtnDiabetes.getText();
 
             }
-
+            if(enfermedades.equals("")){
+                JOptionPane.showMessageDialog(null, "Error","Error", JOptionPane.WARNING_MESSAGE);
+            }else{
             receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
 
             datosReceptor = receptor.toString();
@@ -334,7 +345,10 @@ public class GUI_Receptor extends javax.swing.JFrame {
             GUI_Donador donador = new GUI_Donador();
             donador.setVisible(true);
             dispose();
-
+            }
+            }
+            }
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ingrese Todos los datos", "Datos", JOptionPane.WARNING_MESSAGE);
         }
