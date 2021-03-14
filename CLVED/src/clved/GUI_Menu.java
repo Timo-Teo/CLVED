@@ -36,6 +36,9 @@ public class GUI_Menu extends javax.swing.JFrame {
         lblRinion = new javax.swing.JLabel();
         lblClved = new javax.swing.JLabel();
         btnDescubiri = new javax.swing.JButton();
+        lblClved1 = new javax.swing.JLabel();
+        lblClved2 = new javax.swing.JLabel();
+        lblClved3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +60,15 @@ public class GUI_Menu extends javax.swing.JFrame {
             }
         });
 
+        lblClved1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblClved1.setText("donante vivo entre familiares"); // NOI18N
+
+        lblClved2.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblClved2.setText("Un sistema para "); // NOI18N
+
+        lblClved3.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblClved3.setText("seleccionar el mejor"); // NOI18N
+
         javax.swing.GroupLayout pnlFondoLayout = new javax.swing.GroupLayout(pnlFondo);
         pnlFondo.setLayout(pnlFondoLayout);
         pnlFondoLayout.setHorizontalGroup(
@@ -64,35 +76,46 @@ public class GUI_Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoLayout.createSequentialGroup()
                 .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlFondoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblRinion, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblClved, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE))
+                        .addGap(39, 39, 39)
+                        .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblClved3)
+                            .addComponent(lblClved1)
+                            .addComponent(lblClved2)
+                            .addGroup(pnlFondoLayout.createSequentialGroup()
+                                .addComponent(lblRinion)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblClved, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDescubiri, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addContainerGap()
+                        .addComponent(btnDescubiri, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addComponent(lblDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlFondoLayout.setVerticalGroup(
             pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFondoLayout.createSequentialGroup()
-                .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlFondoLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(lblClved))
-                    .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnDescubiri, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(lblDoctor))
+                    .addGroup(pnlFondoLayout.createSequentialGroup()
                         .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlFondoLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(lblDoctor))
-                            .addGroup(pnlFondoLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(lblRinion)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                                .addComponent(lblRinion))
+                            .addGroup(pnlFondoLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(lblClved)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(lblClved2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblClved3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblClved1)
+                        .addGap(104, 104, 104)
+                        .addComponent(btnDescubiri, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,6 +177,9 @@ public class GUI_Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDescubiri;
     private javax.swing.JLabel lblClved;
+    private javax.swing.JLabel lblClved1;
+    private javax.swing.JLabel lblClved2;
+    private javax.swing.JLabel lblClved3;
     private javax.swing.JLabel lblDoctor;
     private javax.swing.JLabel lblRinion;
     private javax.swing.JPanel pnlFondo;
