@@ -21,6 +21,23 @@ public class Lista {
         super();
     }
 
+    /*public void crearListaFinal(Donador miDonate){
+        this.P = new NodoLista();
+        this.P.setINFO(miDonate);
+        this.P.setLIGA(null);
+        NodoLista T;
+        T = this.P;
+        int opcion = JOptionPane.showConfirmDialog(null,"DEsea ingresar mas nodos?");
+        while (opcion == JOptionPane.YES_OPTION){
+            NodoLista Q = new NodoLista();
+            Q.setINFO(JOptionPane.showInputDialog("Ingrese el nombre del siguiente nodo"));
+            Q.setLIGA(null);
+            T.setLIGA(Q);
+            T = Q;
+            opcion = JOptionPane.showConfirmDialog(null,"DEsea ingresar mas nodos?");
+            
+        }
+    }*/
     public void insertarNodo(Donador miDonate) {
         if (this.P == null) {
             this.P = new NodoLista();
@@ -57,15 +74,5 @@ public class Lista {
         
         return lista;
     }
-
-    public NodoLista getP() {
-        return P;
-    }
-
-    public void setP(NodoLista P) {
-        this.P = P;
-    }
-    
-    
 
 }
