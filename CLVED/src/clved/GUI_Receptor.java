@@ -106,7 +106,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         lblApellidos.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblApellidos.setText("Apellido");
         pnlFondo.add(lblApellidos);
-        lblApellidos.setBounds(40, 310, 92, 29);
+        lblApellidos.setBounds(40, 310, 93, 29);
 
         lblEnfermedades.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblEnfermedades.setText("Enfermedad");
@@ -154,7 +154,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
         cmbTipoSangre.setBounds(680, 230, 160, 30);
 
         cmbSexo.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
-        cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Femenino", "Masculino" }));
+        cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Femenino", "Masculino" }));
         cmbSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSexoActionPerformed(evt);
@@ -291,7 +291,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
             nombre = txtNombre.getText();
             apellido = txtApellido.getText();
             if (nombre.equals("") || apellido.equals("")) {
-                JOptionPane.showMessageDialog(null, "Ingrese sus Datos correctamente", "Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ingrese sus Datos Correctamente", "Error", JOptionPane.WARNING_MESSAGE);
             } else {
 
                 edad = Integer.parseInt(txtEdad.getText());
@@ -347,7 +347,7 @@ public class GUI_Receptor extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Ingrese Todos los datos", "Datos", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ingrese sus datos Correctamente", "Datos", JOptionPane.WARNING_MESSAGE);
         }
 
 
