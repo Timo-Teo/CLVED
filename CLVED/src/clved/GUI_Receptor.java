@@ -286,69 +286,66 @@ public class GUI_Receptor extends javax.swing.JFrame {
         String tipoSangre;
         String sexo;
 
-        //si es selecionar
-        
         try {
-            
+
             nombre = txtNombre.getText();
             apellido = txtApellido.getText();
-            if(nombre.equals("") || apellido.equals("")){
-                JOptionPane.showMessageDialog(null, "Error","Error", JOptionPane.WARNING_MESSAGE);
-            }else{
-            
-            edad = Integer.parseInt(txtEdad.getText());
-            if(edad <= 0){
-                JOptionPane.showMessageDialog(null, "Ingrese una edad valida", "Edad", JOptionPane.WARNING_MESSAGE);
-                btnContinuar.wait();
-            }
-            
-            
-            tipoSangre = (String) cmbTipoSangre.getSelectedItem();
-            if(cmbTipoSangre.getSelectedItem().equals("Seleccionar")){
-                JOptionPane.showMessageDialog(null, "Error","Error", JOptionPane.WARNING_MESSAGE);
-            }else{
-            miMatriz.setTipoSangreReceptor(tipoSangre);
+            if (nombre.equals("") || apellido.equals("")) {
+                JOptionPane.showMessageDialog(null, "Ingrese sus Datos correctamente", "Error", JOptionPane.WARNING_MESSAGE);
+            } else {
 
-            sexo = (String) cmbSexo.getSelectedItem();
+                edad = Integer.parseInt(txtEdad.getText());
+                if (edad <= 0) {
+                    JOptionPane.showMessageDialog(null, "Ingrese una edad valida", "Error", JOptionPane.WARNING_MESSAGE);
+                    btnContinuar.wait();
+                }
 
-            if (rbtnPresionArterial.isSelected()) {
-                enfermedades = rbtnPresionArterial.getText();
+                tipoSangre = (String) cmbTipoSangre.getSelectedItem();
+                if (cmbTipoSangre.getSelectedItem().equals("Seleccionar")) {
+                    JOptionPane.showMessageDialog(null, "Escoja un Tipo de Sangre", "Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    miMatriz.setTipoSangreReceptor(tipoSangre);
 
-            }
-            if (rbtnEnfermedadCardiaca.isSelected()) {
-                enfermedades = rbtnEnfermedadCardiaca.getText();
+                    sexo = (String) cmbSexo.getSelectedItem();
 
-            }
-            if (rbtnEnfermedadRenal.isSelected()) {
-                enfermedades = rbtnEnfermedadRenal.getText();
+                    if (rbtnPresionArterial.isSelected()) {
+                        enfermedades = rbtnPresionArterial.getText();
 
-            }
-            if (rbtnHepatitis.isSelected()) {
-                enfermedades = rbtnHepatitis.getText();
+                    }
+                    if (rbtnEnfermedadCardiaca.isSelected()) {
+                        enfermedades = rbtnEnfermedadCardiaca.getText();
 
-            }
-            if (rbtnVih.isSelected()) {
-                enfermedades = rbtnVih.getText();
+                    }
+                    if (rbtnEnfermedadRenal.isSelected()) {
+                        enfermedades = rbtnEnfermedadRenal.getText();
 
-            }
-            if (rbtnDiabetes.isSelected()) {
-                enfermedades = rbtnDiabetes.getText();
+                    }
+                    if (rbtnHepatitis.isSelected()) {
+                        enfermedades = rbtnHepatitis.getText();
 
-            }
-            if(enfermedades.equals("")){
-                JOptionPane.showMessageDialog(null, "Error","Error", JOptionPane.WARNING_MESSAGE);
-            }else{
-            receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
+                    }
+                    if (rbtnVih.isSelected()) {
+                        enfermedades = rbtnVih.getText();
 
-            datosReceptor = receptor.toString();
+                    }
+                    if (rbtnDiabetes.isSelected()) {
+                        enfermedades = rbtnDiabetes.getText();
 
-            GUI_Donador donador = new GUI_Donador();
-            donador.setVisible(true);
-            dispose();
+                    }
+                    if (enfermedades.equals("")) {
+                        JOptionPane.showMessageDialog(null, "Escoja una Enfermedad", "Error", JOptionPane.WARNING_MESSAGE);
+                    } else {
+                        receptor = new Receptor(nombre, apellido, edad, sexo, tipoSangre, enfermedades);
+
+                        datosReceptor = receptor.toString();
+
+                        GUI_Donador donador = new GUI_Donador();
+                        donador.setVisible(true);
+                        dispose();
+                    }
+                }
             }
-            }
-            }
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ingrese Todos los datos", "Datos", JOptionPane.WARNING_MESSAGE);
         }
