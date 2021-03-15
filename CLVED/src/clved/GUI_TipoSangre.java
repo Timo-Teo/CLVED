@@ -43,6 +43,15 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txaTipoSangre = new javax.swing.JTextArea();
         btnAtrasDatosReceptor = new javax.swing.JButton();
+        lblTitulo1 = new javax.swing.JLabel();
+        lblTitulo2 = new javax.swing.JLabel();
+        lblTitulo3 = new javax.swing.JLabel();
+        lblTitulo4 = new javax.swing.JLabel();
+        lblTitulo5 = new javax.swing.JLabel();
+        lblTitulo6 = new javax.swing.JLabel();
+        lblTitulo7 = new javax.swing.JLabel();
+        lblTitulo8 = new javax.swing.JLabel();
+        lblTitulo9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,10 +62,10 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
         pnlFondo.add(lblRinon1);
         lblRinon1.setBounds(560, 10, 50, 50);
 
-        lblTitulo.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        lblTitulo.setText("TIPO DE SANGRE");
+        lblTitulo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo.setText("c");
         pnlFondo.add(lblTitulo);
-        lblTitulo.setBounds(270, 10, 290, 42);
+        lblTitulo.setBounds(30, 130, 30, 20);
 
         lblRinon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RiñonPequeño.png"))); // NOI18N
         pnlFondo.add(lblRinon);
@@ -81,32 +90,78 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnSalir);
-        btnSalir.setBounds(650, 360, 120, 30);
+        btnSalir.setBounds(680, 360, 120, 30);
 
         txaTipoSangre.setColumns(20);
         txaTipoSangre.setRows(5);
         jScrollPane1.setViewportView(txaTipoSangre);
 
         pnlFondo.add(jScrollPane1);
-        jScrollPane1.setBounds(40, 90, 730, 210);
+        jScrollPane1.setBounds(70, 90, 730, 210);
 
         btnAtrasDatosReceptor.setBackground(new java.awt.Color(204, 204, 255));
         btnAtrasDatosReceptor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnAtrasDatosReceptor.setText("ATRÁS");
-        btnAtrasDatosReceptor.setActionCommand("ATRÁS");
         btnAtrasDatosReceptor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasDatosReceptorActionPerformed(evt);
             }
         });
         pnlFondo.add(btnAtrasDatosReceptor);
-        btnAtrasDatosReceptor.setBounds(490, 360, 120, 30);
+        btnAtrasDatosReceptor.setBounds(540, 360, 120, 30);
+
+        lblTitulo1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblTitulo1.setText("TIPO DE SANGRE");
+        pnlFondo.add(lblTitulo1);
+        lblTitulo1.setBounds(270, 10, 290, 42);
+
+        lblTitulo2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo2.setText("Donador");
+        pnlFondo.add(lblTitulo2);
+        lblTitulo2.setBounds(690, 50, 110, 40);
+
+        lblTitulo3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo3.setText("R");
+        pnlFondo.add(lblTitulo3);
+        lblTitulo3.setBounds(30, 90, 30, 20);
+
+        lblTitulo4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo4.setText("e");
+        pnlFondo.add(lblTitulo4);
+        lblTitulo4.setBounds(30, 100, 30, 40);
+
+        lblTitulo5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo5.setText("r");
+        pnlFondo.add(lblTitulo5);
+        lblTitulo5.setBounds(30, 240, 20, 20);
+
+        lblTitulo6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo6.setText("e");
+        pnlFondo.add(lblTitulo6);
+        lblTitulo6.setBounds(30, 150, 30, 20);
+
+        lblTitulo7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo7.setText("p");
+        pnlFondo.add(lblTitulo7);
+        lblTitulo7.setBounds(30, 170, 20, 30);
+
+        lblTitulo8.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo8.setText("t");
+        pnlFondo.add(lblTitulo8);
+        lblTitulo8.setBounds(30, 200, 20, 20);
+
+        lblTitulo9.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        lblTitulo9.setText("o");
+        pnlFondo.add(lblTitulo9);
+        lblTitulo9.setBounds(30, 220, 20, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,6 +229,15 @@ public class GUI_TipoSangre extends javax.swing.JFrame {
     private javax.swing.JLabel lblRinon;
     private javax.swing.JLabel lblRinon1;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTitulo1;
+    private javax.swing.JLabel lblTitulo2;
+    private javax.swing.JLabel lblTitulo3;
+    private javax.swing.JLabel lblTitulo4;
+    private javax.swing.JLabel lblTitulo5;
+    private javax.swing.JLabel lblTitulo6;
+    private javax.swing.JLabel lblTitulo7;
+    private javax.swing.JLabel lblTitulo8;
+    private javax.swing.JLabel lblTitulo9;
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JTextArea txaTipoSangre;
     // End of variables declaration//GEN-END:variables

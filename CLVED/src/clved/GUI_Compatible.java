@@ -50,21 +50,21 @@ public class GUI_Compatible extends javax.swing.JFrame {
 
         lblRinion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RiñonPequeño.png"))); // NOI18N
         pnlFondo.add(lblRinion);
-        lblRinion.setBounds(560, 10, 50, 50);
+        lblRinion.setBounds(550, 0, 50, 50);
 
         lblCompatibilidad.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         lblCompatibilidad.setText("COMPATIBILIDAD");
         pnlFondo.add(lblCompatibilidad);
-        lblCompatibilidad.setBounds(270, 10, 290, 42);
+        lblCompatibilidad.setBounds(240, 10, 290, 42);
 
         lblRinion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RiñonPequeño.png"))); // NOI18N
         pnlFondo.add(lblRinion1);
-        lblRinion1.setBounds(210, 10, 50, 50);
+        lblRinion1.setBounds(160, 0, 50, 50);
 
         lblClved.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblClved.setText("CLVED");
         pnlFondo.add(lblClved);
-        lblClved.setBounds(10, 400, 70, 34);
+        lblClved.setBounds(10, 370, 70, 34);
 
         btnSalir.setBackground(new java.awt.Color(255, 204, 204));
         btnSalir.setFont(new java.awt.Font("Trebuchet MS", 0, 20)); // NOI18N
@@ -75,7 +75,7 @@ public class GUI_Compatible extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnSalir);
-        btnSalir.setBounds(730, 390, 120, 30);
+        btnSalir.setBounds(580, 370, 120, 30);
 
         txaCompatibles.setColumns(20);
         txaCompatibles.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
@@ -94,13 +94,15 @@ public class GUI_Compatible extends javax.swing.JFrame {
             }
         });
         pnlFondo.add(btnAtrasDatosReceptor);
-        btnAtrasDatosReceptor.setBounds(600, 390, 120, 30);
+        btnAtrasDatosReceptor.setBounds(420, 370, 120, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

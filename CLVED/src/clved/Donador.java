@@ -17,7 +17,7 @@ public class Donador {
     private String sexoDonante;
     private String tipoSangreDonante;
     private String enfermedadDonante;
-    private String parentezco;
+    private String parentesco;
     
 
     public Donador(String nombreDonante, String apellidoDonante, int edadDonante, 
@@ -28,7 +28,7 @@ public class Donador {
         this.sexoDonante = sexoDonante;
         this.tipoSangreDonante = tipoSangreDonante;
         this.enfermedadDonante = enfermedadDonante;
-        this.parentezco = parentezco;
+        this.parentesco = parentezco;
     }
 
     public String getNombreDonante() {
@@ -80,19 +80,19 @@ public class Donador {
     }
 
     public String getParentezco() {
-        return parentezco;
+        return parentesco;
     }
 
     public void setParentezco(String parentezco) {
-        this.parentezco = parentezco;
+        this.parentesco = parentezco;
     }
 
     @Override
     public String toString() {
         return "NOMBRE DEL DONANTE: " + nombreDonante + "\nAPELLIDO DEL DONANTE: " 
                 + apellidoDonante + "\nTIPO DE SANGRE: " 
-                + tipoSangreDonante + "\nENFERMEDA: " + enfermedadDonante 
-                + "\nPARENTEZCO: " + parentezco
+                + tipoSangreDonante + "\nENFERMEDAD: " + enfermedadDonante 
+                + "\nPARENTESCO: " + parentesco
                 +"\n------------------------------------------";
     }
     
